@@ -1,0 +1,10 @@
+{
+  "name": "@cmusy/ui",
+  "author": {
+    "name": "Yaroslav Kulpan",
+    "email": "yaroslav.kulpan.dev@gmail.com",
+    "url": "https://yaroslavkulpan.dev/"
+  },
+  "license": "MIT",
+  "version": "0.0.1"
+}
