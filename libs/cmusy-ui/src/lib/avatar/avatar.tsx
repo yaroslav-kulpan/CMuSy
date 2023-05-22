@@ -1,61 +1,26 @@
-import clsx from 'clsx';
-import React, { HTMLProps } from 'react';
+import React from 'react';
+
 import { Typography } from '../typography';
+import { avatar, AvatarVariants } from './avatar.theme';
 
-type Variant = 'square' | 'rounded' | 'circle';
-type Color =
-  | 'primary'
-  | 'secondary'
-  | 'danger'
-  | 'success'
-  | 'warning'
-  | 'tertiary';
-
-export interface AvatarProps extends HTMLProps<HTMLDivElement> {
-  variant?: Variant;
-  color?: Color;
-  src?: string;
-  alt?: string;
-}
-
-const styles = {
-  variants: {
-    square: '',
-    rounded: 'rounded-2xl',
-    circle: 'rounded-full',
-  },
-  colors: {
-    primary: 'bg-primary text-white',
-    secondary: 'bg-neutral-gray text-white',
-    danger: 'bg-error text-white',
-    success: 'bg-success text-white',
-    warning: 'bg-secondary text-white',
-    tertiary: 'bg-tertiary text-white',
-  },
-};
+export type AvatarProps = React.ComponentPropsWithoutRef<'div'> &
+  AvatarVariants & {
+    src?: string;
+    alt?: string;
+  };
 
 export function Avatar({
   className,
   children,
-  variant = 'circle',
+  round = 'circle',
   color = 'primary',
   src,
   alt,
 }: AvatarProps) {
-  const classes = clsx(
-    'flex justify-center items-center h-11 w-11',
-    styles.variants[variant],
-    !src && styles.colors[color],
-    className
-  );
   return (
-    <div className={classes}>
+    <div className={avatar({ round, color, className })}>
       {src ? (
-        <img
-          src={src}
-          className={clsx('object-contain', styles.variants[variant])}
-          alt={alt}
-        />
+        <img src={src} className={'object-contain'} alt={alt} />
       ) : (
         <Typography variant="small-1" as="a">
           {children}
