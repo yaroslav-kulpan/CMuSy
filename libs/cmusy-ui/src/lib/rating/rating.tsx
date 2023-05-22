@@ -33,12 +33,12 @@ export function Rating({
   const ratingContainerRef = useRef(null);
   const arrayOfStars = Array.from({ length: totalStars }, (_, idx) => idx + 1);
 
-  const handleClick = (e: any) => {
+  const handleClick = (evt: any) => {
     setIsHovered(false);
-    const calculatedRating = calculateRating(e);
+    const calculatedRating = calculateRating(evt);
     setActiveStar(calculatedRating);
     if (onRatingChange) {
-      onRatingChange(calculateRating(e));
+      onRatingChange(calculateRating(evt));
     }
   };
 
@@ -55,7 +55,8 @@ export function Rating({
   const calculateRating = (e: any) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    const { width, left } = ratingContainerRef?.current?.getBoundingClientRect();
+    const { width, left } =
+      ratingContainerRef?.current?.getBoundingClientRect();
     const percent = (e.clientX - left) / width;
     const numberInStars = percent * totalStars;
     const nearestNumber =

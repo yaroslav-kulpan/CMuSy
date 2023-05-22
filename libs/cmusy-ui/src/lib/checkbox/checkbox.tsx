@@ -1,42 +1,37 @@
-import { Typography } from '../typography';
 import { ComponentPropsWithoutRef, forwardRef, useId } from 'react';
-import clsx from 'clsx';
+import { checkbox, CheckboxVariants } from './checkbox.theme';
 
-type Colors = 'primary';
-
-type CheckboxProps = Omit<ComponentPropsWithoutRef<'input'>, 'type'> & {
-  label?: string;
-  color?: Colors;
-};
+type CheckboxProps = Omit<ComponentPropsWithoutRef<'input'>, 'type'> &
+  CheckboxVariants & {
+    label?: string;
+  };
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  function Checkbox({ label, className, ...props }, ref) {
+  function Checkbox({ label, className, color = 'primary', ...props }, ref) {
+    const {
+      base,
+      input,
+      inputWrapper,
+      label: labelStyles,
+    } = checkbox({ color });
+
     const id = useId();
     return (
-      <label className="relative flex items-start cursor-pointer">
-        <div className="flex h-5 items-center">
+      <label className={base()}>
+        <div className={inputWrapper()}>
           <input
             id={id}
             aria-describedby={`${id}-description`}
             type="checkbox"
             ref={ref}
-            className={clsx(
-              'form-checkbox h-5 w-5 rounded border-2 border-neutral-lightest-gray text-primary focus:ring-primary pointer-events-none',
-              className
-            )}
+            className={input({ className })}
             {...props}
           />
         </div>
         <div className="ml-3 text-sm">
-          <Typography
-            variant="body-1"
-            as="label"
-            htmlFor={id}
-            color="font-medium text-neutral-black"
-            className="pointer-events-none"
-          >
+          <label htmlFor={id} className={labelStyles()}>
             {label}
-          </Typography>
+          </label>
           <span id={`${id}-description`} className="text-gray-500">
             <span className="sr-only">{label}</span>
           </span>
@@ -45,3 +40,5 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
     );
   }
 );
+
+export default Checkbox;

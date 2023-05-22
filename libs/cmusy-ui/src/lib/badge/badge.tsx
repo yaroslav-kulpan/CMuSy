@@ -80,11 +80,16 @@ const variants: Record<string, any> = {
       'py-2 px-4 rounded-bl-2xl rounded-tr-2xl text-caption text-white font-bold leading-16 tracking-0.6',
   },
   indicator: {
-    primary: 'absolute h-5 w-5 -top-1 -right-1 flex justify-center items-center bg-primary text-white rounded-lg text-small-3 font-bold leading-14',
-    success: 'absolute h-3 w-3 top-0 right-0 py-1 pr-1 bg-success text-white rounded-lg text-small-3 font-bold leading-14',
-    secondary: 'absolute h-3 w-3 top-0 -right-0  py-1 pr-1 bg-neutral-gray text-white rounded-lg text-small-3 font-bold leading-14',
-    'no-color': 'absolute h-3 w-3 top-0 right-0 py-1 pr-1 rounded-lg text-small-3 font-bold leading-14',
-    danger: 'absolute h-3 w-3 top-0 right-0 py-1 pr-1 bg-error text-white rounded-lg text-small-3 font-bold leading-14',
+    primary:
+      'absolute h-5 w-5 -top-1 -right-1 flex justify-center items-center bg-primary text-white rounded-lg text-small-3 font-bold leading-14',
+    success:
+      'absolute h-3 w-3 top-0 right-0 py-1 pr-1 bg-success text-white rounded-lg text-small-3 font-bold leading-14',
+    secondary:
+      'absolute h-3 w-3 top-0 -right-0  py-1 pr-1 bg-neutral-gray text-white rounded-lg text-small-3 font-bold leading-14',
+    'no-color':
+      'absolute h-3 w-3 top-0 right-0 py-1 pr-1 rounded-lg text-small-3 font-bold leading-14',
+    danger:
+      'absolute h-3 w-3 top-0 right-0 py-1 pr-1 bg-error text-white rounded-lg text-small-3 font-bold leading-14',
   },
 };
 
@@ -99,10 +104,10 @@ const elementPropsByVariant: Record<string, any> = {
   },
 };
 
-export const Badge = React.forwardRef<TTag, React.PropsWithChildren<BadgeProps>>(function Badge(
-  props: React.PropsWithChildren<BadgeProps>,
-  ref
-) {
+export const Badge = React.forwardRef<
+  TTag,
+  React.PropsWithChildren<BadgeProps>
+>(function Badge(props: React.PropsWithChildren<BadgeProps>, ref) {
   const {
     children,
     as,
@@ -113,10 +118,15 @@ export const Badge = React.forwardRef<TTag, React.PropsWithChildren<BadgeProps>>
     className,
     ...restProps
   } = props;
-  const { as: asByVariant, ...restPropsVariants } = elementPropsByVariant[variant] || {};
+  const { as: asByVariant, ...restPropsVariants } =
+    elementPropsByVariant[variant] || {};
   const Component = asByVariant || as || 'span';
 
-  const classes = clsx(variants[variant][color], variant !== 'dot' && variant !== 'indicator' && badgesSizes[size], className);
+  const classes = clsx(
+    variants[variant][color],
+    variant !== 'dot' && variant !== 'indicator' && badgesSizes[size],
+    className
+  );
 
   return (
     <Component

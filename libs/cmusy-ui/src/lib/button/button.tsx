@@ -7,13 +7,11 @@ import button from './button.theme';
 import { ThemeColors } from '../theme/theme.interface';
 import { __DEV__ } from '../utils/assert';
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
-import { AsProp } from '../utils/props';
 
 type Variant = 'text' | 'outlined' | 'contained' | 'small';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> &
-  AriaButtonProps &
-  AsProp<'span' | 'a'> & {
+  AriaButtonProps & {
     variant?: Variant;
     color?: ThemeColors;
     fullWidth?: boolean;
@@ -62,4 +60,4 @@ export const Button = React.forwardRef<
 if (__DEV__) {
   Button.displayName = 'CMuSyUI.Button';
 }
-export default React.memo(Button);
+export default Button;

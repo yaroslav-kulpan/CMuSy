@@ -5,3 +5,5 @@ export * from './lib/tabs';
 export * from './lib/typography';
 export * from './lib/container';
 export * from './lib/avatar';
+export * from './lib/radio';
+export * from "./lib/checkbox";

@@ -58,6 +58,7 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
       readOnly: isReadOnly,
       clearable,
       value,
+      className,
       ...restProps
     } = props;
     const inputRef = useDomRef(ref);
@@ -127,7 +128,7 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
           )}
           <input
             ref={inputRef}
-            className={input()}
+            className={input({ className })}
             aria-readonly={isReadOnly}
             {...mergeProps(inputProps, restProps)}
           />

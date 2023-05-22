@@ -4,64 +4,12 @@ import Button from './button';
 const meta: Meta<typeof Button> = {
   title: 'Button',
   component: Button,
+  tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const All = () => {
-  return (
-    <div className="flex flex-col gap-y-4">
-      <div className="flex gap-x-4">
-        <Button variant="text" color="primary">
-          Primary
-        </Button>
-        <Button variant="text" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="text" color="danger">
-          Danger
-        </Button>
-        <Button variant="text">
-          Light
-        </Button>
-      </div>
-      <div className="flex gap-x-4">
-        <Button variant="contained" color="primary">
-          Primary
-        </Button>
-        <Button variant="contained" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="contained" color="danger">
-          Danger
-        </Button>
-      </div>
-      <div className="flex gap-x-4">
-        <Button variant="outlined" color="primary">
-          Primary
-        </Button>
-        <Button variant="outlined" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="outlined" color="danger">
-          Danger
-        </Button>
-      </div>
-      <div className="flex gap-x-4">
-        <Button variant="small" color="primary">
-          Primary
-        </Button>
-        <Button variant="small" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="small" color="danger">
-          Danger
-        </Button>
-      </div>
-    </div>
-  );
-};
 export const Text: Story = {
   args: {
     children: 'Primary',
