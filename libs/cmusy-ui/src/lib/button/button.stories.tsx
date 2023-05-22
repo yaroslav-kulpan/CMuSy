@@ -22,7 +22,7 @@ export const All = () => {
         <Button variant="text" color="danger">
           Danger
         </Button>
-        <Button variant="text" color="light">
+        <Button variant="text">
           Light
         </Button>
       </div>
@@ -36,9 +36,6 @@ export const All = () => {
         <Button variant="contained" color="danger">
           Danger
         </Button>
-        <Button variant="contained" color="light">
-          Light
-        </Button>
       </div>
       <div className="flex gap-x-4">
         <Button variant="outlined" color="primary">
@@ -50,8 +47,16 @@ export const All = () => {
         <Button variant="outlined" color="danger">
           Danger
         </Button>
-        <Button variant="outlined" color="light">
-          Light
+      </div>
+      <div className="flex gap-x-4">
+        <Button variant="small" color="primary">
+          Primary
+        </Button>
+        <Button variant="small" color="secondary">
+          Secondary
+        </Button>
+        <Button variant="small" color="danger">
+          Danger
         </Button>
       </div>
     </div>

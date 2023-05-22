@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React from 'react';
 
 import { Typography } from '../typography';
@@ -11,7 +10,7 @@ export function HelperText({
   error,
 }: React.PropsWithChildren<HelperTextProps>) {
   return error ? (
-    <Typography variant="small-2" className={clsx('text-error')}>
+    <Typography variant="small-2" className="text-error">
       {children}
     </Typography>
   ) : null;

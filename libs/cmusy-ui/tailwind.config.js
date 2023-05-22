@@ -1,9 +1,11 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 const defaultTheme = require('tailwindcss/defaultTheme');
+const { withTV } = require('tailwind-variants/transformer');
+const plugin = require('tailwindcss');
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withTV({
   content: [
     join(
       __dirname,
@@ -111,4 +113,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms', { strategy: 'class' })],
-};
+});

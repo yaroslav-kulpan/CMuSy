@@ -13,6 +13,7 @@ export const Default: Story = {
   args: {
     label: 'Label',
     placeholder: 'Placeholder',
+    fullWidth: false
   },
 };
 
