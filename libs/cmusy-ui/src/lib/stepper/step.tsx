@@ -1,5 +1,6 @@
-import React, { PropsWithChildren, memo } from 'react';
+import React from 'react';
 import clsx from 'clsx';
+
 import { Typography } from '../typography';
 
 export type StepProps = {
@@ -18,7 +19,7 @@ export function Step({
   count = 0,
   label,
   description,
-}: PropsWithChildren<StepProps>) {
+}: React.PropsWithChildren<StepProps>) {
   const normalizedStep = step + 1;
 
   return (
@@ -61,4 +62,4 @@ export function Step({
   );
 }
 
-export default memo(Step);
+export default React.memo(Step);

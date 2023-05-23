@@ -1,24 +1,31 @@
-import { HTMLProps, PropsWithChildren, useRef, useState, useEffect } from 'react';
+import React from 'react';
+
 import { Checkbox } from '../checkbox';
 import { TableColumn } from './table-column';
 import { useTable, useTableAction } from './context/table.context';
+import { tableHeader, TableHeaderVariants } from './table.theme';
 
-type TableHeaderProps = HTMLProps<HTMLHeadingElement>;
+type TableHeaderProps = React.ComponentPropsWithoutRef<'thead'> &
+  TableHeaderVariants;
 
-export function TableHeader({ children }: PropsWithChildren<TableHeaderProps>) {
-  const [checked, setChecked] = useState(false);
-  const [indeterminate, setIndeterminate] = useState(false);
-  const checkbox = useRef<HTMLInputElement>(null);
+export function TableHeader({
+  children,
+}: React.PropsWithChildren<TableHeaderProps>) {
+  const [checked, setChecked] = React.useState(false);
+  const [indeterminate, setIndeterminate] = React.useState(false);
+  const checkboxRef = React.useRef<HTMLInputElement>(null);
   const { selectedKeys, list } = useTable();
   const dispatch = useTableAction();
+  const { checkbox, header, row, column } = tableHeader();
 
-  useEffect(() => {
-    const isIndeterminate = selectedKeys.size > 0 && selectedKeys.size < list.length;
+  React.useEffect(() => {
+    const isIndeterminate =
+      selectedKeys.size > 0 && selectedKeys.size < list.length;
     setChecked(selectedKeys.size === list.length);
     setIndeterminate(isIndeterminate);
 
-    if (checkbox.current) {
-      checkbox.current.indeterminate = isIndeterminate;
+    if (checkboxRef.current) {
+      checkboxRef.current.indeterminate = isIndeterminate;
     }
   }, [list.length, selectedKeys]);
 
@@ -32,18 +39,18 @@ export function TableHeader({ children }: PropsWithChildren<TableHeaderProps>) {
   };
 
   return (
-    <thead className="border border-b-neutral-light-gray">
-    <tr className="bg-neutral-background">
-      <TableColumn scope="col" className="relative w-12">
-        <Checkbox
-          className="absolutes top-1/2"
-          ref={checkbox}
-          checked={checked}
-          onChange={toggleAll}
-        />
-      </TableColumn>
-      {children}
-    </tr>
+    <thead className={header()}>
+      <tr className={row()}>
+        <TableColumn scope="col" className={column()}>
+          <Checkbox
+            className={checkbox()}
+            ref={checkboxRef}
+            checked={checked}
+            onChange={toggleAll}
+          />
+        </TableColumn>
+        {children}
+      </tr>
     </thead>
   );
 }

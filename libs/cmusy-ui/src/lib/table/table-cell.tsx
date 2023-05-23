@@ -1,18 +1,15 @@
-import { HTMLProps, PropsWithChildren } from 'react';
-import clsx from 'clsx';
+import React, { ComponentPropsWithoutRef } from 'react';
+import { tableCell } from './table.theme';
 
-type TableCellProps = HTMLProps<HTMLTableCellElement>;
+type TableCellProps = ComponentPropsWithoutRef<'td'>;
 
-export function TableCell({ children, className, ...props }: PropsWithChildren<TableCellProps>) {
+export const TableCell = React.forwardRef<
+  HTMLTableCellElement,
+  React.PropsWithChildren<TableCellProps>
+>(function TableCell({ children, className, ...props }, ref) {
   return (
-    <td
-      className={clsx(
-        'text-small-2 font-semibold leading-16 tracking-0 py-5 px-4 whitespace-nowrap',
-        className
-      )}
-      {...props}
-    >
+    <td ref={ref} className={tableCell({ className })} {...props}>
       {children}
     </td>
   );
-}
+});

@@ -1,6 +1,7 @@
 import { ReactNode, useRef, useState } from 'react';
 // import { IconOutlineStar, IconStarBigFill } from '@starsup/icons';
 import clsx from 'clsx';
+import { useDomRef } from '../use-dom-ref/use-dom-ref';
 
 type RatingProps = {
   value?: number;
@@ -30,7 +31,7 @@ export function Rating({
   const [activeStar, setActiveStar] = useState(() => value ?? -1);
   const [hoverActiveStar, setHoverActiveStar] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
-  const ratingContainerRef = useRef(null);
+  const ratingContainerRef = useDomRef<HTMLDivElement>(null);
   const arrayOfStars = Array.from({ length: totalStars }, (_, idx) => idx + 1);
 
   const handleClick = (evt: any) => {
@@ -43,20 +44,21 @@ export function Rating({
   };
 
   //Event listener for mouse move and leave
-  const handleMouseMove = (e: any) => {
+  const onMouseMove = (e: any) => {
     setIsHovered(true);
     setHoverActiveStar(calculateRating(e)); // We already calculation in this function
   };
-  const handleMouseLeave = () => {
+  const onMouseLeave = () => {
     setHoverActiveStar(-1); // Reset to default state
     setIsHovered(false);
   };
 
   const calculateRating = (e: any) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const { width, left } =
-      ratingContainerRef?.current?.getBoundingClientRect();
+    const { left, width } =
+      ratingContainerRef.current?.getBoundingClientRect() || {
+        width: 1,
+        left: 0,
+      };
     const percent = (e.clientX - left) / width;
     const numberInStars = percent * totalStars;
     const nearestNumber =
@@ -77,8 +79,8 @@ export function Rating({
     return {
       className: clsx('grid grid-cols-5 gap-1', className),
       ref: ratingContainerRef,
-      onMouseMove: handleMouseMove,
-      onMouseLeave: handleMouseLeave,
+      onMouseMove,
+      onMouseLeave,
       onClick: handleClick,
     };
   }
