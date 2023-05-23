@@ -1,5 +1,6 @@
 import React from 'react';
-import clsx from 'clsx';
+
+import { stepper } from './stepper.theme';
 
 export type StepsProps = {
   activeStep: number;
@@ -15,8 +16,8 @@ export function Stepper({
 }: React.PropsWithChildren<StepsProps>) {
   const count = React.Children.count(children);
   const stepContent =
-    (React.Children.toArray(children)[activeStep] as React.ReactElement).props.children ||
-    null;
+    (React.Children.toArray(children)[activeStep] as React.ReactElement).props
+      .children || null;
 
   const itemsSteps = React.Children.map(children, (child, idx) => {
     const hasActive = activeStep === idx;
@@ -32,7 +33,7 @@ export function Stepper({
 
   return (
     <div>
-      <div className={clsx('flex gap-x-6', className)}>{itemsSteps}</div>
+      <div className={stepper({ className })}>{itemsSteps}</div>
       {stepContent}
     </div>
   );
