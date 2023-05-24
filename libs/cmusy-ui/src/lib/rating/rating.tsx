@@ -1,14 +1,16 @@
-import { ReactNode, useRef, useState } from 'react';
+import React, { useState } from 'react';
 // import { IconOutlineStar, IconStarBigFill } from '@starsup/icons';
 import clsx from 'clsx';
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
+import { IconStar } from './icon-star';
+import { starStyles, StarVariants } from './rating.theme';
 
-type RatingProps = {
+type RatingProps = StarVariants & {
   value?: number;
   precision?: number;
   totalStars?: number;
-  emptyIcon?: ReactNode;
-  filledIcon?: ReactNode;
+  emptyIcon?: React.FC<React.SVGAttributes<SVGElement>>;
+  filledIcon?: React.FC<React.SVGAttributes<SVGElement>>;
   className?: string;
   classNameFilledIcon?: string;
   classNameEmptyIcon?: string;
@@ -17,24 +19,30 @@ type RatingProps = {
   onRatingChange?: (rating: number) => void;
 };
 
-export function Rating({
-  precision = 1,
-  totalStars = 5,
-  readOnly = false,
-  value,
-  label,
-  className,
-  classNameFilledIcon,
-  classNameEmptyIcon,
-  onRatingChange,
-}: RatingProps) {
+export function Rating(props: RatingProps) {
+  const {
+    precision = 1,
+    totalStars = 5,
+    readOnly = false,
+    value,
+    label,
+    emptyIcon: EmptyIcon = IconStar,
+    filledIcon: FilledIcon = IconStar,
+    className,
+    classNameFilledIcon,
+    classNameEmptyIcon,
+    onRatingChange,
+    size,
+    color,
+  } = props;
+
   const [activeStar, setActiveStar] = useState(() => value ?? -1);
   const [hoverActiveStar, setHoverActiveStar] = useState(-1);
   const [isHovered, setIsHovered] = useState(false);
   const ratingContainerRef = useDomRef<HTMLDivElement>(null);
   const arrayOfStars = Array.from({ length: totalStars }, (_, idx) => idx + 1);
 
-  const handleClick = (evt: any) => {
+  const handleClick = (evt: React.MouseEvent) => {
     setIsHovered(false);
     const calculatedRating = calculateRating(evt);
     setActiveStar(calculatedRating);
@@ -44,22 +52,22 @@ export function Rating({
   };
 
   //Event listener for mouse move and leave
-  const onMouseMove = (e: any) => {
+  const onMouseMove = (evt: React.MouseEvent) => {
     setIsHovered(true);
-    setHoverActiveStar(calculateRating(e)); // We already calculation in this function
+    setHoverActiveStar(calculateRating(evt)); // We already calculation in this function
   };
   const onMouseLeave = () => {
     setHoverActiveStar(-1); // Reset to default state
     setIsHovered(false);
   };
 
-  const calculateRating = (e: any) => {
+  const calculateRating = (evt: React.MouseEvent) => {
     const { left, width } =
       ratingContainerRef.current?.getBoundingClientRect() || {
         width: 1,
         left: 0,
       };
-    const percent = (e.clientX - left) / width;
+    const percent = (evt.clientX - left) / width;
     const numberInStars = percent * totalStars;
     const nearestNumber =
       Math.round((numberInStars + precision / 2) / precision) * precision;
@@ -84,6 +92,7 @@ export function Rating({
       onClick: handleClick,
     };
   }
+  // const { starIcon } = ratingStyles({});
 
   return (
     <div className="flex items-center gap-x-2">
@@ -103,7 +112,6 @@ export function Rating({
           const isRatingEqualToIndex = Math.ceil(activeState) === index + 1;
           const showRatingWithPrecision =
             isActiveRating && isRatingWithPrecision && isRatingEqualToIndex;
-
           return (
             <div className="relative pointer" key={starValue}>
               <button
@@ -121,30 +129,39 @@ export function Rating({
                   position: 'absolute',
                 }}
               >
-                <span
-                  className={clsx(
-                    'w-6 h-6 text-[#8BBDD1] cover-fill',
-                    classNameFilledIcon
-                  )}
+                <IconStar
+                  className={starStyles({
+                    color,
+                    size,
+                    className: classNameFilledIcon,
+                  })}
                 />
               </button>
-              {!showEmptyIcon ? (
-                <span
-                  className={clsx(
-                    'w-6 h-6 text-[#8BBDD1] cover-fill',
-                    classNameFilledIcon
-                  )}
+
+              {showEmptyIcon ? (
+                <EmptyIcon
+                  className={starStyles({
+                    color,
+                    size,
+                    showEmptyIcon,
+                    className: classNameEmptyIcon,
+                  })}
                 />
               ) : (
-                <span
-                  className={clsx('w-6 h-6 text-[#7EB7C0]', classNameEmptyIcon)}
+                <FilledIcon
+                  className={starStyles({
+                    color,
+                    size,
+                    showEmptyIcon,
+                    className: classNameFilledIcon,
+                  })}
                 />
               )}
             </div>
           );
         })}
       </div>
-      {label && <small>{label}</small>}
+      {label && <small className="text-neutral-gray">{label}</small>}
     </div>
   );
 }
