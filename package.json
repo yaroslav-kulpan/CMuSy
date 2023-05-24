@@ -8,6 +8,7 @@
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
     "@nestjs/platform-express": "9.4.0",
