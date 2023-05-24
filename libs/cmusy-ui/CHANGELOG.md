@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.2.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.0...cmusy-ui-0.2.1) (2023-05-24)
+
+
+### Bug Fixes
+
+* **CMUSY-8:** Fix client context for  nextjs ([5125f11](https://github.com/yaroslav-kulpan/CMuSy/commit/5125f11d1a67760ca11d7699c6260768d59e879e))
+
 ## [0.2.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.1.0...cmusy-ui-0.2.0) (2023-05-24)
 
 
