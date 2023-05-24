@@ -1,50 +1,46 @@
-import { Children, cloneElement, HTMLProps, memo, PropsWithChildren, ReactElement } from 'react';
+import React from 'react';
+
 import { TableCell } from './table-cell';
 import { Checkbox } from '../checkbox';
 import { useTable, useTableAction } from './context/table.context';
-import clsx from 'clsx';
+import { tableRow } from './table.theme';
 
-type TableRow = HTMLProps<HTMLTableRowElement> & {
+type TableRow = React.ComponentPropsWithoutRef<'tr'> & {
   rowKey: any;
 };
 
-export function TableRow({ children, className, rowKey }: PropsWithChildren<TableRow>) {
+export const TableRow = React.forwardRef<
+  HTMLTableRowElement,
+  React.PropsWithChildren<TableRow>
+>(function TableRow({ children, className, rowKey }) {
   const { selectedKeys } = useTable();
   const dispatch = useTableAction();
-
+  const selectedRow = selectedKeys?.has(rowKey);
+  const { row, cell, checkbox, col } = tableRow({
+    selected: selectedRow,
+  });
   const handleChange = () => {
     dispatch({ type: 'toggle-selected', payload: rowKey });
   };
 
   return (
-    <tr
-      className={clsx(
-        'hover:bg-neutral-background cursor-pointer transition duration-150',
-        className
-      )}
-    >
-      <TableCell
-        className={clsx('relative transition duration-150', {
-          'bg-primary-light': selectedKeys?.has(rowKey),
-        })}
-      >
+    <tr className={row({ className })}>
+      <TableCell className={cell()}>
         <Checkbox
-          className="absolutes top-1/2"
+          className={checkbox()}
           onChange={handleChange}
-          checked={selectedKeys?.has(rowKey)}
+          checked={selectedRow}
         />
       </TableCell>
-      {Children.map(children, (child) => {
-        const childItem = child as ReactElement;
+      {React.Children.map(children, (child) => {
+        const childItem = child as React.ReactElement;
         const childClassName = childItem.props.className;
-        return cloneElement(childItem, {
-          className: clsx(childClassName, {
-            'transition duration-150 bg-primary-light': selectedKeys?.has(rowKey),
-          }),
+        return React.cloneElement(childItem, {
+          className: col({ className: childClassName }),
         });
       })}
     </tr>
   );
-}
+});
 
-export default memo(TableRow);
+export default React.memo(TableRow);

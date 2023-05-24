@@ -8,17 +8,23 @@
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
     "@nestjs/platform-express": "9.4.0",
     "@stitches/react": "^1.2.8",
     "axios": "^1.0.0",
     "clsx": "^1.2.1",
+    "i": "^0.3.7",
+    "npm": "^9.6.7",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-aria": "^3.24.0",
     "react-dom": "18.2.0",
+    "react-stately": "^3.22.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
+    "tailwind-variants": "^0.1.5",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

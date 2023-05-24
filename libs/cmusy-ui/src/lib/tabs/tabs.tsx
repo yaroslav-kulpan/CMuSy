@@ -1,19 +1,16 @@
-import {
-  Children,
-  memo,
-  PropsWithChildren,
-  ReactElement,
-  useState,
-} from 'react';
+import React from 'react';
 import clsx from 'clsx';
 
-import TabPanel, { ITabPanelProps } from './tab-panel';
+import { ITabPanelProps } from './tab-panel';
+import { tabs } from './tabs.theme';
+import { Typography } from '../typography';
 
 interface ITabsProps {
   defaultTab?: number;
   onHandleChangeTab?: (idx: number) => void;
   ariaLabel?: string;
   fullWidth?: boolean;
+  disabled?: boolean;
 }
 
 export function Tabs({
@@ -22,9 +19,9 @@ export function Tabs({
   ariaLabel = 'Sample Tabs',
   fullWidth = false,
   children,
-}: PropsWithChildren<ITabsProps>) {
-  const [activeIdx, setActiveIdx] = useState(() => defaultTab || 0);
-
+}: React.PropsWithChildren<ITabsProps>) {
+  const [activeIdx, setActiveIdx] = React.useState(() => defaultTab || 0);
+  const { root, tab } = tabs({ fullWidth });
   const handleChangeTab = (idx: number) => {
     setActiveIdx(idx);
 
@@ -37,39 +34,38 @@ export function Tabs({
     <div className="tabs">
       <div
         role="tablist"
-        className={clsx('p-1 bg-neutral-lightest-gray rounded-2xl', {
-          flex: fullWidth,
-        })}
+        className={root()}
         aria-label={ariaLabel}
         aria-orientation="horizontal"
       >
-        {Children.map(children, (child, idx) => {
-          const item = child as ReactElement<PropsWithChildren<ITabPanelProps>>;
-          if (item.type === TabPanel) {
-            return (
-              <button
-                role="tab"
-                aria-selected={item.props.index === activeIdx}
-                aria-controls={`panel-${idx}`}
-                className={clsx('text-sm py-3.5 px-7 rounded-2xl', {
-                  'bg-neutral-black text-white': item.props.index === activeIdx,
-                  'flex-1': fullWidth,
-                })}
-                onClick={() => handleChangeTab(idx)}
-                id={`tab-${idx}`}
-                tabIndex={0}
-              >
-                {item.props.title}
-              </button>
-            );
-          }
-          return child;
+        {React.Children.map(children, (child, idx) => {
+          const item = child as React.ReactElement<
+            React.PropsWithChildren<ITabPanelProps>
+          >;
+
+          const isSelected = item.props.index === activeIdx;
+
+          return (
+            <button
+              role="tab"
+              aria-selected={isSelected}
+              aria-controls={`panel-${idx}`}
+              className={tab({
+                class: clsx({ 'bg-neutral-black text-white': isSelected }),
+              })}
+              onClick={() => handleChangeTab(idx)}
+              id={`tab-${idx}`}
+              tabIndex={0}
+            >
+              <Typography variant="subtitle-1">{item.props.title}</Typography>
+            </button>
+          );
         })}
       </div>
 
-      {Children.toArray(children)[activeIdx]}
+      {React.Children.toArray(children)[activeIdx]}
     </div>
   );
 }
 
-export default memo(Tabs);
+export default React.memo(Tabs);

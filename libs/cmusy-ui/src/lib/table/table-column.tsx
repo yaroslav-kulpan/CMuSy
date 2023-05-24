@@ -1,19 +1,19 @@
-import { HTMLProps, PropsWithChildren } from 'react';
-import clsx from 'clsx';
+import React from 'react';
 
-type TableColumnAlign = 'start' | 'center' | 'end';
-type TableColumnProps = HTMLProps<HTMLTableColElement>;
+import { tableColumn, TableColumnVariants } from './table.theme';
 
-export function TableColumn({ children, className }: PropsWithChildren<TableColumnProps>) {
+type TableColumnProps = React.ComponentPropsWithoutRef<'th'> &
+  TableColumnVariants;
+
+export const TableColumn = React.forwardRef<
+  HTMLTableCellElement,
+  React.PropsWithChildren<TableColumnProps>
+>(function TableColumn({ children, className, ...rest }, ref) {
   return (
-    <th
-      scope="col"
-      className={clsx(
-        'whitespace-nowrap text-small-1 font-bold leading-18 tracking-0.1 first:py-5 px-4 last:pr-4 last:text-right text-neutral-gray',
-        className
-      )}
-    >
+    <th ref={ref} scope="col" className={tableColumn({ className })} {...rest}>
       {children}
     </th>
   );
-}
+});
+
+export default TableColumn;

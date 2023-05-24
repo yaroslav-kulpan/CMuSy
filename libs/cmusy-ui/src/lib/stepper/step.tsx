@@ -1,6 +1,7 @@
-import React, { PropsWithChildren, memo } from 'react';
-import clsx from 'clsx';
-import { Typography } from '../typography';
+import React from 'react';
+
+import { stepTheme } from './stepper.theme';
+import { IconCheck } from './icon-check';
 
 export type StepProps = {
   hasActive?: boolean;
@@ -15,50 +16,44 @@ export function Step({
   step = 0,
   hasActive,
   activeStep = 0,
-  count = 0,
+  count: totalChildren = 0,
   label,
   description,
-}: PropsWithChildren<StepProps>) {
+}: React.PropsWithChildren<StepProps>) {
   const normalizedStep = step + 1;
+  const hasNextStep = step > activeStep;
+  const hasCurrentStep = step === activeStep;
+  const hasCompletedStep = activeStep > step;
+
+  const {
+    root,
+    stepWrapper,
+    countWrapper,
+    connector,
+    label: labelStyles,
+    description: descriptionStyles,
+    subtitle,
+  } = stepTheme({
+    hasCurrentStep,
+    hasNextStep,
+    hasCompletedStep,
+  });
 
   return (
-    <div className="flex-1">
-      <div className="flex items-center gap-x-6 mb-3">
-        <span
-          className={clsx(
-            'flex justify-center items-center h-8 w-8 rounded-full text-white transition duration-150',
-            {
-              'bg-success': activeStep > step,
-              'bg-neutral-light-gray': step > activeStep,
-              'bg-primary': step === activeStep,
-            }
-          )}
-        >
+    <div className={root()}>
+      <div className={stepWrapper()}>
+        <span className={countWrapper()}>
           {step >= activeStep && (
-            <Typography variant="subtitle-1">{normalizedStep}</Typography>
+            <span className={subtitle()}>{normalizedStep}</span>
           )}
-          {activeStep > step && <span className="w-5 h-5" />}
+          {hasCompletedStep && <IconCheck />}
         </span>
-        {count !== normalizedStep && (
-          <span
-            className={clsx('flex h-px flex-1', {
-              'bg-success': activeStep > step,
-              'bg-neutral-light-gray': step > activeStep,
-              'bg-primary': step === activeStep,
-            })}
-          />
-        )}
+        {totalChildren !== normalizedStep && <span className={connector()} />}
       </div>
-      <Typography as="h5" variant="subtitle-1">
-        {label}
-      </Typography>
-      {description && (
-        <Typography as="p" variant="body-2">
-          {description}
-        </Typography>
-      )}
+      <h5 className={labelStyles()}>{label}</h5>
+      {description && <p className={descriptionStyles()}>{description}</p>}
     </div>
   );
 }
 
-export default memo(Step);
+export default React.memo(Step);

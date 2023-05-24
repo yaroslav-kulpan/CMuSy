@@ -1,24 +1,23 @@
-import { forwardRef, HTMLAttributes, memo, PropsWithChildren } from 'react';
-import clsx from 'clsx';
+import React from 'react';
 
-export interface ICardProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: 'default' | 'floating';
+import { card, CardVariants } from './card.theme';
+import { __DEV__ } from '../utils/assert';
+
+export type CardProps = React.ComponentPropsWithoutRef<'div'> & CardVariants;
+
+export const Card = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<CardProps>
+>(function Card({ children, className, variant = 'default', ...props }, ref) {
+  return (
+    <div ref={ref} className={card({ className })} {...props}>
+      {children}
+    </div>
+  );
+});
+
+if (__DEV__) {
+  Card.displayName = 'CMuSyUI.Card';
 }
 
-const styles = {
-  default: 'min-w-0 bg-white border border-neutral-light-gray rounded-2xl',
-  floating:
-    'min-w-0 bg-white border border-neutral-lightest-gray rounded-2xl shadow-card',
-};
-
-export const Card = forwardRef<HTMLDivElement, PropsWithChildren<ICardProps>>(
-  function Card({ children, className, variant = 'default', ...props }, ref) {
-    return (
-      <div ref={ref} className={clsx(styles[variant], className)} {...props}>
-        {children}
-      </div>
-    );
-  }
-);
-
-export default memo(Card);
+export default Card;

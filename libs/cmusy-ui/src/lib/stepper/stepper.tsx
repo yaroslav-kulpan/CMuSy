@@ -1,11 +1,6 @@
-import {
-  Children,
-  cloneElement,
-  memo,
-  PropsWithChildren,
-  ReactElement,
-} from 'react';
-import clsx from 'clsx';
+import React from 'react';
+
+import { stepper } from './stepper.theme';
 
 export type StepsProps = {
   activeStep: number;
@@ -18,16 +13,16 @@ export function Stepper({
   children,
   className,
   unmountOnExit,
-}: PropsWithChildren<StepsProps>) {
-  const count = Children.count(children);
+}: React.PropsWithChildren<StepsProps>) {
+  const count = React.Children.count(children);
   const stepContent =
-    (Children.toArray(children)[activeStep] as ReactElement).props.children ||
-    null;
+    (React.Children.toArray(children)[activeStep] as React.ReactElement).props
+      .children || null;
 
-  const itemsSteps = Children.map(children, (child, idx) => {
+  const itemsSteps = React.Children.map(children, (child, idx) => {
     const hasActive = activeStep === idx;
     const hasCompleted = !hasActive && activeStep > idx;
-    return cloneElement(child as ReactElement, {
+    return React.cloneElement(child as React.ReactElement, {
       step: idx,
       activeStep,
       count,
@@ -38,10 +33,10 @@ export function Stepper({
 
   return (
     <div>
-      <div className={clsx('flex gap-x-6', className)}>{itemsSteps}</div>
+      <div className={stepper({ className })}>{itemsSteps}</div>
       {stepContent}
     </div>
   );
 }
 
-export default memo(Stepper);
+export default React.memo(Stepper);

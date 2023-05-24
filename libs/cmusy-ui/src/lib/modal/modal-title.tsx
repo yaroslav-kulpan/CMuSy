@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 import clsx from 'clsx';
+import {modalTitleStyles} from "./modal.theme";
 
 type IModalTitleProps = ComponentPropsWithoutRef<'div'>;
 
@@ -9,7 +10,7 @@ export function ModalTitle({
   ...props
 }: PropsWithChildren<IModalTitleProps>) {
   return (
-    <div className={clsx('px-5 py-5', className)} {...props}>
+    <div className={modalTitleStyles({className})} {...props}>
       {children}
     </div>
   );

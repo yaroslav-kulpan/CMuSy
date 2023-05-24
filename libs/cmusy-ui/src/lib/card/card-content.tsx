@@ -1,13 +1,13 @@
-import { HTMLAttributes, memo, PropsWithChildren } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 
-export type CardContentProps = HTMLAttributes<HTMLDivElement>;
+export type CardContentProps = React.ComponentPropsWithoutRef<"div">;
 
 export function CardContent({
   children,
   className,
-}: PropsWithChildren<CardContentProps>) {
+}: React.PropsWithChildren<CardContentProps>) {
   return <div className={clsx('px-5 py-5', className)}>{children}</div>;
 }
 
-export default memo(CardContent);
+export default React.memo(CardContent);

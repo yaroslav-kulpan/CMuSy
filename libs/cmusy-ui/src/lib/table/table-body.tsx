@@ -1,11 +1,19 @@
-import { HTMLProps, PropsWithChildren } from 'react';
+import React from 'react';
 
-type TableBodyProps = HTMLProps<HTMLTableSectionElement>;
+import { tableBody } from './table.theme';
 
-export function TableBody({ children }: PropsWithChildren<TableBodyProps>) {
+type TableBodyProps = React.ComponentPropsWithoutRef<'tbody'>;
+
+export const TableBody = React.forwardRef<
+  React.ComponentPropsWithoutRef<'tbody'>,
+  React.PropsWithChildren<TableBodyProps>
+>(function TableBody({ children, className, ...rest }) {
   return (
-    <tbody className="divide-y">
-    {children}
+    <tbody className={tableBody({ className })} {...rest}>
+      {children}
     </tbody>
   );
-}
+});
+
+
+export default TableBody;

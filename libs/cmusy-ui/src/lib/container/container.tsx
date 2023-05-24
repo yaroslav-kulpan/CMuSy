@@ -1,12 +1,11 @@
-import React, { PropsWithChildren } from 'react';
+import React, { ElementType, PropsWithChildren } from 'react';
 import clsx from 'clsx';
 
-import { AsProp } from '../utils/props';
-
-type ContainerProps = AsProp<'span' | 'div'> & {
+type ContainerProps<T extends ElementType = 'div' | 'span'> = {
+  as?: T;
   className?: string;
   clean?: boolean;
-}
+};
 
 export function Container({
   children,
@@ -17,5 +16,5 @@ export function Container({
   const rootClassName = clsx(className, {
     'mx-auto max-w-7xl px-6 w-full': !clean,
   });
-  return <Component className={rootClassName} >{children}</Component>;
+  return <Component className={rootClassName}>{children}</Component>;
 }
