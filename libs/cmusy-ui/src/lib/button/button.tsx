@@ -3,17 +3,13 @@ import { AriaButtonProps, useFocusRing, useHover } from 'react-aria';
 import { mergeProps } from 'react-aria';
 import { useButton } from '@react-aria/button';
 
-import button from './button.theme';
-import { ThemeColors } from '../theme/theme.interface';
+import button, { ButtonVariants } from './button.theme';
 import { __DEV__ } from '../utils/assert';
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
 
-type Variant = 'text' | 'outlined' | 'contained' | 'small';
-
 type ButtonProps = React.ComponentPropsWithRef<'button'> &
-  AriaButtonProps & {
-    variant?: Variant;
-    color?: ThemeColors;
+  AriaButtonProps &
+  ButtonVariants & {
     fullWidth?: boolean;
   };
 
