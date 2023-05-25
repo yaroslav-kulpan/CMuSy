@@ -1,0 +1,13 @@
+{
+  "name": "@cmusy/plugin",
+  "author": {
+    "name": "Yaroslav Kulpan",
+    "email": "yaroslav.kulpan.dev@gmail.com",
+    "url": "https://yaroslavkulpan.dev/"
+  },
+  "repository": {
+    "url": "https://github.com/yaroslav-kulpan/CMuSy/tree/develop/libs/cmusy-ui"
+  },
+  "license": "MIT",
+  "version": "0.1.0"
+}

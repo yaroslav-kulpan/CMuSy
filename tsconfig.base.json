@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cmusy/plugin": ["libs/cmusy-ui-plugin/src/index.ts"],
       "@cmusy/ui": ["libs/cmusy-ui/src/index.ts"]
     }
   },

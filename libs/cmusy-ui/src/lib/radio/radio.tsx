@@ -1,7 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
 
-import { Typography } from '../typography';
 import { radio, RadioVariants } from './radio.theme';
 import { mergeProps, useFocusRing } from 'react-aria';
 import { IconCircle } from './icon-circle';

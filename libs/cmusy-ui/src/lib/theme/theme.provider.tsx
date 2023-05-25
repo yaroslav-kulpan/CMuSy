@@ -1,5 +1,4 @@
-'use client';
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { SSRProvider } from 'react-aria';
 
 import ThemeContext, { defaultContext } from './theme.context';
@@ -8,7 +7,7 @@ export type ThemeProviderProps = {
   theme?: any;
 };
 
-export const ThemeProvider: React.FC<PropsWithChildren<ThemeProviderProps>> = ({
+export const ThemeProvider: React.FC<React.PropsWithChildren<ThemeProviderProps>> = ({
   children,
 }) => {
   return (

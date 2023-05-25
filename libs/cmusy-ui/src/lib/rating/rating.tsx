@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { IconOutlineStar, IconStarBigFill } from '@starsup/icons';
+import React from 'react';
 import clsx from 'clsx';
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
 import { IconStar } from './icon-star';
@@ -36,9 +35,9 @@ export function Rating(props: RatingProps) {
     color,
   } = props;
 
-  const [activeStar, setActiveStar] = useState(() => value ?? -1);
-  const [hoverActiveStar, setHoverActiveStar] = useState(-1);
-  const [isHovered, setIsHovered] = useState(false);
+  const [activeStar, setActiveStar] = React.useState(() => value ?? -1);
+  const [hoverActiveStar, setHoverActiveStar] = React.useState(-1);
+  const [isHovered, setIsHovered] = React.useState(false);
   const ratingContainerRef = useDomRef<HTMLDivElement>(null);
   const arrayOfStars = Array.from({ length: totalStars }, (_, idx) => idx + 1);
 
