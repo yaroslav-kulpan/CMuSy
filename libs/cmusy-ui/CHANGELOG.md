@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.2.3](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.2...cmusy-ui-0.2.3) (2023-05-25)
+
+
+### Features
+
+* **cmusy-ui:** Add README.md for @cmusy/ui ([105c820](https://github.com/yaroslav-kulpan/CMuSy/commit/105c820401e5ebace269a1dff283e454d64f1683))
+
 ### [0.2.2](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.1...cmusy-ui-0.2.2) (2023-05-25)
 
 
