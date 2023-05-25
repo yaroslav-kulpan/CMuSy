@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.2.2](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.1...cmusy-ui-0.2.2) (2023-05-25)
+
+
+### Features
+
+* **CMUSY-9:** Add plugin for @cmusy/ui and init nextjs webapp ([cc20425](https://github.com/yaroslav-kulpan/CMuSy/commit/cc20425315ace7e97e920173412a2723e8c10f96))
+
 ### [0.2.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.0...cmusy-ui-0.2.1) (2023-05-24)
 
 
