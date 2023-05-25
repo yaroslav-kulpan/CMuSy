@@ -1,4 +1,4 @@
-# Your Library Name
+# CMuSyUI
 
 > A collection of reusable UI components for React.
 
