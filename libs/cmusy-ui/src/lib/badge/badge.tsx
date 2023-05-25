@@ -1,4 +1,5 @@
-import React from 'react';
+import * as React from 'react';
+
 import { badge, BadgeVariants, dot } from './badge.theme';
 import { mergeProps } from 'react-aria';
 

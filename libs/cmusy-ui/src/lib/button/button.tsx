@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { AriaButtonProps, useFocusRing, useHover } from 'react-aria';
 import { mergeProps } from 'react-aria';
