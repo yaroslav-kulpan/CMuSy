@@ -63,6 +63,12 @@
       "options": {
         "lintFilePatterns": ["apps/webapp/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional"
+      }
     }
   },
   "tags": []
