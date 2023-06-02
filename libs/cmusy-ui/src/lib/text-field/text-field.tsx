@@ -1,23 +1,23 @@
 import React from 'react';
 import {
-  AriaTextFieldOptions,
+  AriaTextFieldProps,
   mergeProps,
   useFocusRing,
   useTextField,
 } from 'react-aria';
+import PropTypes from 'prop-types';
 
 import { HelperText } from '../helper-text';
-import { Typography } from '../typography';
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
 import { textField } from './text-field.theme';
-import PropTypes from 'prop-types';
 import { IconClearable } from './icon-clearable';
 import { __DEV__ } from '../utils/assert';
+import Typography from '../typography';
 
 type Variant = 'outlined' | 'filled';
 
 export type ITextFieldProps = React.ComponentPropsWithoutRef<'input'> &
-  AriaTextFieldOptions<'input'> & {
+  Omit<AriaTextFieldProps, 'isDisabled' | 'isReadOnly' | 'isRequired'> & {
     variant?: Variant;
     color?: 'primary';
     label?: string | null;
@@ -51,21 +51,20 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
       fullWidth = false,
       disabled: isDisabled = false,
       error = false,
+      errorMessage = null,
       helperText = null,
       classNameWrapper,
       disablePointerEvents = true,
-      id: customId,
-      readOnly: isReadOnly,
-      clearable,
+      readOnly: isReadOnly = false,
+      required: isRequired = false,
+      clearable= false,
       value,
       className,
       ...restProps
     } = props;
     const inputRef = useDomRef(ref);
-    const { inputProps, labelProps } = useTextField(
-      { isDisabled, isReadOnly, ...props },
-      inputRef
-    );
+    const { inputProps, labelProps, errorMessageProps, descriptionProps } =
+      useTextField({ isDisabled, isReadOnly, isRequired, ...props }, inputRef);
 
     const { focusProps: clearFocusFocusProps } = useFocusRing();
     const {
@@ -88,6 +87,7 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
       startAdornment: !!startAdornment,
       endAdornment: !!endAdornment,
       disablePointerEvents,
+      isRequired,
     });
 
     const handleClearTextFieldValue = (
@@ -115,7 +115,7 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
     return (
       <div className={root({ className: classNameWrapper })}>
         <Typography
-          as="span"
+          as="label"
           variant="small-2"
           className={labelStyles()}
           {...labelProps}
@@ -132,6 +132,9 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
             aria-readonly={isReadOnly}
             {...mergeProps(inputProps, restProps)}
           />
+          {endAdornment && (
+            <div className={endAdornmentStyles()}>{endAdornment}</div>
+          )}
           {clearable && (
             <div className={clearableButton()}>
               <button
@@ -144,11 +147,15 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
               </button>
             </div>
           )}
-          {endAdornment && (
-            <div className={endAdornmentStyles()}>{endAdornment}</div>
-          )}
         </div>
-        <HelperText error={error}>{helperText}</HelperText>
+        {error && !helperText && (
+          <HelperText className="text-error" {...errorMessageProps}>
+            {errorMessage}
+          </HelperText>
+        )}
+        {!error && helperText && (
+          <HelperText {...descriptionProps}>{helperText}</HelperText>
+        )}
       </div>
     );
   }

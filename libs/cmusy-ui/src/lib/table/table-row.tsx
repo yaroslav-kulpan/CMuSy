@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TableCell } from './table-cell';
-import { Checkbox } from '../checkbox';
+import Checkbox from '../checkbox';
 import { useTable, useTableAction } from './context/table.context';
 import { tableRow } from './table.theme';
 

@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
+import TextArea from "./text-area";
 
-import TextField from './text-field';
 
 export default {
-  component: TextField,
-  title: 'Forms/TextField',
-} as Meta<typeof TextField>;
+  component: TextArea,
+  title: 'Forms/TextArea',
+} as Meta<typeof TextArea>;
 
-type Story = StoryObj<typeof TextField>;
+type Story = StoryObj<typeof TextArea>;
 
 export const Default: Story = {
   args: {
@@ -32,14 +32,6 @@ export const Error: Story = {
     placeholder: 'Placeholder',
     error: true,
     errorMessage: 'Error message',
-  },
-};
-
-export const Clearable: Story = {
-  args: {
-    label: 'Clearable',
-    placeholder: 'Placeholder',
-    clearable: true,
   },
 };
 

@@ -10,7 +10,7 @@ export const tabs = tv({
     },
   },
   slots: {
-    root: 'p-1 bg-neutral-lightest-gray rounded-2xl',
+    root: 'p-1 bg-neutral-gray-lightest rounded-2xl',
     tab: 'text-neutral-gray-dark py-3.5 px-7 rounded-2xl',
   },
   compoundSlots: [

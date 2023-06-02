@@ -1,8 +1,8 @@
 import React from 'react';
-import clsx from 'clsx';
+
 import { useDomRef } from '../use-dom-ref/use-dom-ref';
 import { IconStar } from './icon-star';
-import { starStyles, StarVariants } from './rating.theme';
+import { ratingStyles, starStyles, StarVariants } from './rating.theme';
 
 type RatingProps = StarVariants & {
   value?: number;
@@ -16,21 +16,25 @@ type RatingProps = StarVariants & {
   readOnly?: boolean;
   label?: string;
   onRatingChange?: (rating: number) => void;
+  getLabelText?: (value: number) => string;
 };
 
+function createStars(totalStars: number): number[] {
+  return Array.from({ length: totalStars }, (_, idx) => idx + 1);
+}
 export function Rating(props: RatingProps) {
   const {
     precision = 1,
     totalStars = 5,
     readOnly = false,
-    value,
-    label,
+    value = 0,
+    label = null,
     emptyIcon: EmptyIcon = IconStar,
     filledIcon: FilledIcon = IconStar,
-    className,
     classNameFilledIcon,
     classNameEmptyIcon,
     onRatingChange,
+    getLabelText,
     size,
     color,
   } = props;
@@ -39,7 +43,7 @@ export function Rating(props: RatingProps) {
   const [hoverActiveStar, setHoverActiveStar] = React.useState(-1);
   const [isHovered, setIsHovered] = React.useState(false);
   const ratingContainerRef = useDomRef<HTMLDivElement>(null);
-  const arrayOfStars = Array.from({ length: totalStars }, (_, idx) => idx + 1);
+  const arrayOfStars = createStars(totalStars);
 
   const handleClick = (evt: React.MouseEvent) => {
     setIsHovered(false);
@@ -70,31 +74,38 @@ export function Rating(props: RatingProps) {
     const numberInStars = percent * totalStars;
     const nearestNumber =
       Math.round((numberInStars + precision / 2) / precision) * precision;
-    return Number(
-      nearestNumber.toFixed(precision.toString().split('.')[1]?.length || 0)
-    );
+    const precisionString = `${precision}`;
+    const decimalPlaces = precisionString.split('.')[1]?.length || 0;
+    return Number(nearestNumber.toFixed(decimalPlaces));
   };
 
   function getRatingProps() {
-    if (readOnly) {
-      return {
-        className: clsx('grid grid-cols-5 gap-1', className),
-        ref: ratingContainerRef,
-      };
+    const defaultProps = {
+      className: 'flex gap-1',
+      ref: ratingContainerRef,
+    };
+
+    if (!readOnly) {
+      Object.assign(defaultProps, {
+        onMouseMove,
+        onMouseLeave,
+        onClick: handleClick,
+      });
     }
 
-    return {
-      className: clsx('grid grid-cols-5 gap-1', className),
-      ref: ratingContainerRef,
-      onMouseMove,
-      onMouseLeave,
-      onClick: handleClick,
-    };
+    return defaultProps;
   }
-  // const { starIcon } = ratingStyles({});
+
+  const {
+    base,
+    label: labelStyles,
+    starButton,
+  } = ratingStyles({ readOnly, size });
+
+  const customLabel = label && getLabelText && getLabelText(activeStar);
 
   return (
-    <div className="flex items-center gap-x-2">
+    <div className={base()}>
       <div {...getRatingProps()}>
         {arrayOfStars.map((starValue, index) => {
           const activeState = isHovered ? hoverActiveStar : activeStar;
@@ -105,28 +116,26 @@ export function Rating(props: RatingProps) {
               index is greater that active state
             */
           const showEmptyIcon = activeState === -1 || activeState < index + 1;
-
           const isActiveRating = activeState !== 1;
           const isRatingWithPrecision = activeState % 1 !== 0;
           const isRatingEqualToIndex = Math.ceil(activeState) === index + 1;
           const showRatingWithPrecision =
             isActiveRating && isRatingWithPrecision && isRatingEqualToIndex;
+
+          const style = {
+            width: showRatingWithPrecision
+              ? `${(activeState % 1) * 100}%`
+              : '0%',
+          };
+
           return (
             <div className="relative pointer" key={starValue}>
               <button
                 type="button"
                 key={index}
                 disabled={readOnly}
-                className={clsx({
-                  'pointer-events-none': readOnly,
-                })}
-                style={{
-                  width: showRatingWithPrecision
-                    ? `${(activeState % 1) * 100}%`
-                    : '0%',
-                  overflow: 'hidden',
-                  position: 'absolute',
-                }}
+                className={starButton()}
+                style={style}
               >
                 <IconStar
                   className={starStyles({
@@ -160,7 +169,9 @@ export function Rating(props: RatingProps) {
           );
         })}
       </div>
-      {label && <small className="text-neutral-gray">{label}</small>}
+      {label && <small className={labelStyles()}>{customLabel || label}</small>}
     </div>
   );
 }
+
+export default React.memo(Rating);

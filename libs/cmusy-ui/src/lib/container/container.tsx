@@ -18,3 +18,6 @@ export function Container({
   });
   return <Component className={rootClassName}>{children}</Component>;
 }
+
+
+export default Container;

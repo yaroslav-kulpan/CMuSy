@@ -1,10 +1,14 @@
 import React from 'react';
+import { useFocusRing } from 'react-aria';
 
-import { ITextFieldProps, TextField } from '../text-field';
+import TextField, { ITextFieldProps } from '../text-field';
+import { IconEyeOff } from './Icon-eye-off';
+import { IconEyeOn } from './Icon-eye-on';
+import clsx from 'clsx';
 
 type PasswordFieldProps = ITextFieldProps & {
-  IconEyeSlash?: React.ReactNode;
-  IconEye?: React.ReactNode;
+  iconEyeOff?: React.FC<React.SVGAttributes<SVGElement>>;
+  iconEyeOn?: React.FC<React.SVGAttributes<SVGElement>>;
 };
 
 export const PasswordField = React.forwardRef<
@@ -12,18 +16,35 @@ export const PasswordField = React.forwardRef<
   PasswordFieldProps
 >(function PasswordField(props, ref) {
   const [showPassword, setShowPassword] = React.useState(false);
+  const { focusProps: toggleFocusProps } = useFocusRing();
   const togglePassword = () => setShowPassword((prevState) => !prevState);
   const type = showPassword ? 'text' : 'password';
   const ariaLabel = showPassword
     ? 'Hide password.'
     : 'Show password as plain text. Warning: this will display your password on the screen.';
-
-  const { IconEyeSlash, IconEye } = props;
+  const {
+    iconEyeOff: IconEyeSlash = IconEyeOff,
+    iconEyeOn: IconEye = IconEyeOn,
+  } = props;
 
   const icon = showPassword ? (
-    <span className="text-neutral-light-gray" />
+    <IconEyeSlash
+      className={clsx(
+        'h-5 w-5 text-neutral-gray-light transition-colors duration-150',
+        {
+          'hover:text-neutral-gray': !props.disabled,
+        }
+      )}
+    />
   ) : (
-    <span className="text-neutral-light-gray" />
+    <IconEye
+      className={clsx(
+        'h-5 w-5 text-neutral-gray-light transition-colors duration-150',
+        {
+          'hover:text-neutral-gray': !props.disabled,
+        }
+      )}
+    />
   );
 
   return (
@@ -31,13 +52,14 @@ export const PasswordField = React.forwardRef<
       ref={ref}
       type={type}
       disablePointerEvents={false}
-      className="pr-10"
       endAdornment={
         <button
           type="button"
           id="toggle-password"
           aria-label={ariaLabel}
           onClick={togglePassword}
+          {...toggleFocusProps}
+          disabled={props.disabled}
         >
           {icon}
         </button>

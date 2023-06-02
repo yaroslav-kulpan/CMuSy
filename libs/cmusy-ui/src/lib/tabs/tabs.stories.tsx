@@ -4,7 +4,7 @@ import { TabPanel } from './tab-panel';
 
 export default {
   component: Tabs,
-  title: 'Tabs',
+  title: 'UI/Tabs',
 } as Meta<typeof Tabs>;
 
 type Story = StoryObj<typeof Tabs>;

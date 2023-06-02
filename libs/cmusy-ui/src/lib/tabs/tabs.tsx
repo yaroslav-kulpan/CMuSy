@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { ITabPanelProps } from './tab-panel';
 import { tabs } from './tabs.theme';
-import { Typography } from '../typography';
+import Typography from '../typography';
 
 interface ITabsProps {
   defaultTab?: number;

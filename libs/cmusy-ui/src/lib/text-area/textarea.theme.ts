@@ -1,18 +1,19 @@
-import { tv } from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
+import { textField } from '../text-field/text-field.theme';
 
-export const textField = tv({
+export const textarea = tv({
+  extend: textField,
   slots: {
-    root: 'group w-52',
-    input:
-      'border-none rounded-lg min-h-11 h-fit leading-20 tracking-0.1 w-full text-neutral-black placeholder:text-neutral-gray placeholder:focus:text-neutral-gray-light text-sm',
+    root: '',
+    input: 'align-bottom',
     inputWrapper: '',
-    label: 'inline-block mb-1 text-neutral-gray-dark',
-    adornment: 'relative',
-    startAdornment: 'absolute inset-y-0 left-0 flex items-center pl-3',
-    endAdornment: 'absolute inset-y-0 right-0 flex items-center pr-3',
+    label: '',
+    adornment: '',
+    startAdornment: '',
+    endAdornment: '',
     helperText: '',
-    clearableButton: 'absolute inset-y-0 right-3 flex items-center pl-3',
-    clearableIcon: 'h-5 w-5 text-neutral-gray-light',
+    clearableButton: '',
+    clearableIcon: '',
   },
   variants: {
     variant: {
@@ -23,13 +24,6 @@ export const textField = tv({
         input: 'rounded-xl',
       },
     },
-    color: {
-      primary: {
-        input:
-          'ring-1.5 ring-inset ring-neutral-gray-light focus:ring-1.5 focus:ring-inset focus:ring-primary',
-        label: 'group-focus-within:text-primary',
-      },
-    },
     // States
     disabled: {
       true: {},
@@ -37,10 +31,10 @@ export const textField = tv({
     error: {
       true: {},
     },
-    fullWidth: {
+    isRequired: {
       true: {},
     },
-    isRequired: {
+    fullWidth: {
       true: {},
     },
     hidden: {
@@ -62,7 +56,7 @@ export const textField = tv({
   compoundSlots: [
     {
       slots: ['input'],
-      class: 'form-input',
+      class: 'form-textarea',
     },
     {
       slots: ['label'],
@@ -108,20 +102,6 @@ export const textField = tv({
       startAdornment: true,
       class: 'pointer-events-none',
     },
-    //   Start
-    {
-      slots: ['endAdornment'],
-      endAdornment: true,
-      clearable: true,
-      class: 'mr-6',
-    },
-    //   Start
-    {
-      slots: ['input'],
-      endAdornment: true,
-      clearable: true,
-      class: 'pr-16',
-    },   //   Start
   ],
   defaultVariants: {
     variant: 'outlined',
@@ -136,3 +116,5 @@ export const textField = tv({
     hidden: false,
   },
 });
+
+export type TextareaVariants = VariantProps<typeof textarea>;

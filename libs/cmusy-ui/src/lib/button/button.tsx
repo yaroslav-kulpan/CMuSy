@@ -1,5 +1,4 @@
-"use client";
-import React from 'react';
+import React, { useMemo } from 'react';
 import { AriaButtonProps, useFocusRing, useHover } from 'react-aria';
 import { mergeProps } from 'react-aria';
 import { useButton } from '@react-aria/button';
@@ -10,9 +9,7 @@ import { useDomRef } from '../use-dom-ref/use-dom-ref';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> &
   AriaButtonProps &
-  ButtonVariants & {
-    fullWidth?: boolean;
-  };
+  Omit<ButtonVariants, 'isPressed'>;
 
 export const Button = React.forwardRef<
   HTMLButtonElement,
@@ -34,19 +31,25 @@ export const Button = React.forwardRef<
   const { hoverProps } = useHover({ isDisabled });
   const { focusProps } = useFocusRing({ autoFocus });
 
-  return (
-    <button
-      {...mergeProps(buttonProps, focusProps, hoverProps, restProps)}
-      ref={buttonRef}
-      type={type}
-      className={button({
+  const classNames = useMemo(
+    () =>
+      button({
         variant,
         color,
         isPressed,
         disabled: isDisabled,
         fullWidth,
         className,
-      })}
+      }),
+    [className, color, fullWidth, isDisabled, isPressed, variant]
+  );
+
+  return (
+    <button
+      {...mergeProps(buttonProps, focusProps, hoverProps, restProps)}
+      ref={buttonRef}
+      type={type}
+      className={classNames}
       disabled={isDisabled}
     >
       {children}
@@ -57,4 +60,4 @@ export const Button = React.forwardRef<
 if (__DEV__) {
   Button.displayName = 'CMuSyUI.Button';
 }
-export default Button;
+export default React.memo(Button);
