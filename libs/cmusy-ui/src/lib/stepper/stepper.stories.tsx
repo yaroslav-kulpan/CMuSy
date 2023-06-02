@@ -5,7 +5,7 @@ import Steps from './stepper';
 import { Step } from './step';
 
 const meta: Meta<typeof Steps> = {
-  title: 'Steps',
+  title: 'UI/Stepper',
   component: Steps,
   tags: ['autodocs'],
 };

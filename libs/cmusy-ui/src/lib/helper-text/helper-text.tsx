@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 
-import { Typography } from '../typography';
+import Typography from '../typography/typography';
 
-type HelperTextProps = {
-  error: boolean;
+type HelperTextProps = ComponentPropsWithoutRef<'span'> & {
+  error?: boolean;
 };
 export function HelperText({
   children,
-  error,
+  ...restProps
 }: React.PropsWithChildren<HelperTextProps>) {
-  return error ? (
-    <Typography variant="small-2" className="text-error">
+  return (
+    <Typography
+      as="span"
+      variant="small-2"
+      {...restProps}
+    >
       {children}
     </Typography>
-  ) : null;
+  );
 }

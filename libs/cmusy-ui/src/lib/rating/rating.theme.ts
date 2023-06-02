@@ -1,27 +1,42 @@
 import { tv, VariantProps } from 'tailwind-variants';
 
 export const ratingStyles = tv({
+  base: 'flex items-center gap-x-2',
   slots: {
-    starIcon: 'w-3.5 h-3.5',
+    label: '!text-neutral-gray text-small-3 font-bold leading-14 tracking-0',
+    starButton: 'absolute overflow-hidden',
   },
   variants: {
-    color: {
-      primary: {
-        starIcon: 'text-primary fill-primary cover-fill',
-      },
-    },
     size: {
       xs: '',
+      sm: '',
+      md: '',
     },
-    showEmptyIcon: {
+    width: '',
+    readOnly: {
       true: {},
     },
   },
   compoundSlots: [
     {
-      slots: ['starIcon'],
-      showEmptyIcon: true,
-      class: 'text-neutral-gray-light fill-neutral-gray-light',
+      slots: ['starButton'],
+      readOnly: true,
+      class: 'pointer-events-none',
+    },
+    {
+      slots: ['label'],
+      size: 'xs',
+      class: 'text-small-3',
+    },
+    {
+      slots: ['label'],
+      size: 'sm',
+      class: 'text-small-2',
+    },
+    {
+      slots: ['label'],
+      size: 'md',
+      class: 'text-small-1',
     },
   ],
 });

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Rating } from './rating';
+import Rating from './rating';
 
 const meta = {
   component: Rating,
@@ -19,7 +19,15 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
   args: {
+    value: 3,
     label: 'Text',
+  },
+};
+export const Precision: Story = {
+  args: {
+    value: 3,
+    label: 'Text',
+    precision: 0.5,
     size: 'md',
   },
 };

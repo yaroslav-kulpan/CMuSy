@@ -3,7 +3,7 @@ import Typography from './typography';
 
 export default {
   component: Typography,
-  title: 'Typography',
+  title: 'UI/Typography',
 } as Meta<typeof Typography>;
 
 type Story = StoryObj<typeof Typography>;

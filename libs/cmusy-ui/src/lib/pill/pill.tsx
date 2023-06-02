@@ -13,3 +13,5 @@ export function Pill({ children, ...props }: IPillProps) {
     </button>
   );
 }
+
+export default Pill;

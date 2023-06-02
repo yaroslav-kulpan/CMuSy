@@ -7,5 +7,10 @@ module.exports = {
     join(__dirname, '{src,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  plugins: [require('./cmusy-ui.plugin')],
+  plugins: [
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
+    require('../../libs/cmusy-ui-plugin/src'),
+  ],
 };

@@ -1,19 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import TextField from './text-field';
+import PasswordField from './password-field';
 
 export default {
-  component: TextField,
-  title: 'Forms/TextField',
-} as Meta<typeof TextField>;
+  component: PasswordField,
+  title: 'Forms/PasswordField',
+} as Meta<typeof PasswordField>;
 
-type Story = StoryObj<typeof TextField>;
+type Story = StoryObj<typeof PasswordField>;
 
 export const Default: Story = {
   args: {
     label: 'Label',
     placeholder: 'Placeholder',
-    fullWidth: false
+    fullWidth: false,
   },
 };
 
@@ -22,7 +22,7 @@ export const Required: Story = {
     label: 'Label',
     placeholder: 'Placeholder',
     fullWidth: false,
-    required: true
+    required: true,
   },
 };
 

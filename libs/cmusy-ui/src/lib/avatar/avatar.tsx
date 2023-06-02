@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography } from '../typography';
+import Typography from '../typography';
 import { avatar, AvatarVariants } from './avatar.theme';
 
 export type AvatarProps = React.ComponentPropsWithoutRef<'div'> &
@@ -30,4 +30,4 @@ export function Avatar({
   );
 }
 
-export default Avatar;
+export default React.memo(Avatar);
