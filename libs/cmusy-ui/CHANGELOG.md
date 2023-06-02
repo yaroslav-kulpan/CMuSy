@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.4...cmusy-ui-0.3.0) (2023-06-02)
+
+
+### Features
+
+* **CMUSY-10:** Update star component, fix imports, and create textarea ([14a0fbf](https://github.com/yaroslav-kulpan/CMuSy/commit/14a0fbf9aa93ebe5b814600ef7388c6586fc487f))
+
 ### [0.2.4](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.3...cmusy-ui-0.2.4) (2023-05-25)
 
 

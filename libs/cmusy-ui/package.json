@@ -1,7 +1,7 @@
 {
   "name": "@cmusy/ui",
   "license": "MIT",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "author": {
     "name": "Yaroslav Kulpan",
     "email": "yaroslav.kulpan.dev@gmail.com",
@@ -10,5 +10,8 @@
   "repository": {
     "url": "https://github.com/yaroslav-kulpan/CMuSy/tree/develop/libs/cmusy-ui"
   },
-  "keywords": ["react components", "react ui"]
+  "keywords": [
+    "react components",
+    "react ui"
+  ]
 }
