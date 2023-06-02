@@ -7,8 +7,8 @@ import { IconEyeOn } from './Icon-eye-on';
 import clsx from 'clsx';
 
 type PasswordFieldProps = ITextFieldProps & {
-  iconEyeOff?: React.ReactNode;
-  iconEyeOn?: React.ReactNode;
+  iconEyeOff?: React.FC<React.SVGAttributes<SVGElement>>;
+  iconEyeOn?: React.FC<React.SVGAttributes<SVGElement>>;
 };
 
 export const PasswordField = React.forwardRef<
@@ -16,12 +16,12 @@ export const PasswordField = React.forwardRef<
   PasswordFieldProps
 >(function PasswordField(props, ref) {
   const [showPassword, setShowPassword] = React.useState(false);
+  const { focusProps: toggleFocusProps } = useFocusRing();
   const togglePassword = () => setShowPassword((prevState) => !prevState);
   const type = showPassword ? 'text' : 'password';
   const ariaLabel = showPassword
     ? 'Hide password.'
     : 'Show password as plain text. Warning: this will display your password on the screen.';
-  const { focusProps: toggleFocusProps } = useFocusRing();
   const {
     iconEyeOff: IconEyeSlash = IconEyeOff,
     iconEyeOn: IconEye = IconEyeOn,
