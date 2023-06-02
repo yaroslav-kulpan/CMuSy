@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Checkbox } from '../checkbox';
+import Checkbox from '../checkbox';
 import { TableColumn } from './table-column';
 import { useTable, useTableAction } from './context/table.context';
 import { tableHeader, TableHeaderVariants } from './table.theme';
