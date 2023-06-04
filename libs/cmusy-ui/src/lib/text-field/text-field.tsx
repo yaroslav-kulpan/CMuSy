@@ -57,10 +57,8 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
       disablePointerEvents = true,
       readOnly: isReadOnly = false,
       required: isRequired = false,
-      clearable= false,
-      value,
+      clearable = false,
       className,
-      ...restProps
     } = props;
     const inputRef = useDomRef(ref);
     const { inputProps, labelProps, errorMessageProps, descriptionProps } =
@@ -89,6 +87,11 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
       disablePointerEvents,
       isRequired,
     });
+
+    const onHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (isDisabled || isReadOnly) return;
+      props.onChange && props.onChange(event);
+    };
 
     const handleClearTextFieldValue = (
       event: React.MouseEvent<HTMLButtonElement>
@@ -127,10 +130,12 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
             <div className={startAdornmentStyles()}>{startAdornment}</div>
           )}
           <input
+            {...mergeProps(inputProps)}
             ref={inputRef}
             className={input({ className })}
             aria-readonly={isReadOnly}
-            {...mergeProps(inputProps, restProps)}
+            aria-required={isRequired}
+            onChange={onHandleChange}
           />
           {endAdornment && (
             <div className={endAdornmentStyles()}>{endAdornment}</div>

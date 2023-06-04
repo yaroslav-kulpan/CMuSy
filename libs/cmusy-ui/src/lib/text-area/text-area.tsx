@@ -77,6 +77,11 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       isRequired,
     });
 
+    const onHandleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      if (isDisabled || isReadOnly) return;
+      props.onChange && props.onChange(event);
+    };
+
     React.useLayoutEffect(() => {
       if (textAreaRef.current) {
         autosize(textAreaRef.current);
@@ -104,6 +109,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
             aria-readonly={isReadOnly}
             aria-required={isRequired}
             rows={minRows}
+            onChange={onHandleChange}
           />
           {endAdornment && (
             <div className={endAdornmentStyles()}>{endAdornment}</div>

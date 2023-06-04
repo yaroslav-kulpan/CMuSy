@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.3.0...cmusy-ui-0.4.0) (2023-06-04)
+
+
+### Features
+
+* **CMUSY-10:** Fix imports ([bc55679](https://github.com/yaroslav-kulpan/CMuSy/commit/bc55679253e3ae6a5c5717e95dfeb18be81bbcc0))
+* **CMUSY-10:** Fix types in PasswordField ([a6e6396](https://github.com/yaroslav-kulpan/CMuSy/commit/a6e6396ae545967b01d659aa910c9ede1953516e))
+* **CMUSY-11:** Add select component ([d55ee05](https://github.com/yaroslav-kulpan/CMuSy/commit/d55ee05857e7dfb096463de3e90c9a3121be5ce1))
+
 ## [0.3.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.2.4...cmusy-ui-0.3.0) (2023-06-02)
 
 
