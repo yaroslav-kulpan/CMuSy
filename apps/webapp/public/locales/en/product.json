@@ -1,0 +1,9 @@
+{
+  "backButton": "Royal Sushi House",
+  "button": "Add to cart",
+  "subTitle": "Recommended with",
+  "productInfo": {
+    "ingredients": "Ingredients",
+    "nutritionalValue": "Nutritional value"
+  }
+}

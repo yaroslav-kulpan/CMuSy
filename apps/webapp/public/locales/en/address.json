@@ -1,0 +1,37 @@
+{
+  "title": "Address",
+  "existingShippingAddresses":{
+    "title": "Existing shipping addresses"
+  },
+  "newShippingAddress": {
+    "title": "New shipping address",
+
+    "button": "Add new address",
+
+    "country": {
+      "label": "Country",
+      "placeholder": "Enter country"
+    } ,
+
+    "state": {
+      "label": "State",
+      "placeholder": "Enter state"
+    } ,
+
+    "city": {
+      "label": "City",
+      "placeholder": "Enter city"
+    } ,
+
+    "firstLine": {
+      "label": "Address line 1",
+      "placeholder": "Enter address"
+    } ,
+
+    "secondLine": {
+      "label": "Address line 2",
+      "placeholder": "Enter address (optional)"
+    }
+  }
+}
+

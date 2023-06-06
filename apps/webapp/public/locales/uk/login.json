@@ -1,0 +1,19 @@
+{
+  "title": "Логін",
+  "description": "Sign in with your data that you entered during your registration.",
+  "email": {
+    "label": "Email*",
+    "placeholder": "name@example.com"
+  },
+  "password": {
+    "label": "Пароль",
+    "placeholder": "мін. 8 символів"
+  },
+  "rememberMe": "Keep me logged in",
+  "submit": "Login",
+  "forgotPassword": "Forgot password",
+  "register": {
+    "label": "Don’t have an account?",
+    "link": "Sign Up"
+  }
+}

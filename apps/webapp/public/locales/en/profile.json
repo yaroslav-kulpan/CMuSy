@@ -1,0 +1,38 @@
+{
+  "title": "Personal information",
+  "avatar": {
+    "title": "Avatar",
+    "change": "Change",
+    "remove": "Remove"
+  },
+  "firstName": {
+    "label": "First Name",
+    "placeholder": "First Name"
+  },
+  "lastName": {
+    "label": "Last Name",
+    "placeholder": "Last Name"
+  },
+  "email": {
+    "label": "Email",
+    "placeholder": "example@email.com"
+  },
+  "phone": {
+    "label": "Phone number",
+    "placeholder": "(099)-999-99-99"
+  },
+  "notification": {
+    "title": "Email notifications",
+    "newDeals": "New deals",
+    "orderStatus": "Order statuses",
+    "passwordChanges": "Password changes",
+    "newsletter": "Newsletter",
+    "specialOffers": "Special offers",
+    "newRestaurants": "New restaurants"
+  },
+  "footer": {
+    "logout": "Logout",
+    "discard": "Discard changes",
+    "save": "Save changes"
+  }
+}

@@ -10,6 +10,7 @@ export { default as Typography } from './lib/typography';
 export { default as Container } from './lib/container';
 export { default as Pill } from './lib/pill';
 export { default as Rating } from './lib/rating';
+export * from "./lib/use-dom-ref/use-dom-ref";
 export * from './lib/datepicker';
 export * from './lib/theme';
 export * from './lib/tabs';

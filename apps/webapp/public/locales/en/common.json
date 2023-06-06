@@ -1,0 +1,17 @@
+{
+  "common": "common",
+  "navigation": {
+    "login": "Sign in",
+    "register": "Create an account",
+    "my-orders": "My orders",
+    "banner": "Get free delivery on orders over $100",
+    "links": {
+      "restaurants": "Restaurants",
+      "deals": "Deals",
+      "colors": "Colors",
+      "text": "Text Fields",
+      "iconfont": "Iconfont icons",
+      "feather": "Feather icons"
+    }
+  }
+}

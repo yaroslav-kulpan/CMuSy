@@ -1,5 +1,4 @@
 "use client";
-import { Button } from '@cmusy/ui';
 
 export default async function Index() {
   /*
@@ -9,7 +8,7 @@ export default async function Index() {
    */
   return (
     <div>
-      <Button>Ui</Button>
+
     </div>
   );
 }

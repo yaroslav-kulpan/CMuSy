@@ -9,12 +9,6 @@ module.exports = cmusyUiPlugin.withOptions(
   },
   function (options) {
     return {
-      darkMode: 'class',
-      plugins: [
-        require('@tailwindcss/forms')({
-          strategy: 'class',
-        }),
-      ],
       theme: {
         extend: {
           colors: {

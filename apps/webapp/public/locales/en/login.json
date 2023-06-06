@@ -1,0 +1,41 @@
+{
+  "title": "Login",
+  "description": "Sign in with your data that you entered during your registration.",
+  "email": {
+    "label": "Email",
+    "placeholder": "name@example.com"
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "min. 8 characters"
+  },
+  "rememberMe": "Keep me logged in",
+  "submit": "Login",
+  "forgotPassword": "Forgot password",
+  "register": {
+    "label": "Don’t have an account?",
+    "link": "Sign Up"
+  },
+  "marketing-slide": {
+  "title": "Leave reviews for all meals",
+  "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae, eirmod assentior eum ne, et omnis antiopam mel.",
+  "reviews": {
+    "title": "Overall rating",
+    "rating": "4.2",
+    "votes": "3 votes",
+    "addReview":"Leave review",
+    "sort": "Sort by:",
+    "first": "Newest first"
+  },
+  "card": {
+    "title": "Roll set",
+    "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe."
+  },
+  "product": {
+    "title": "Nigiri set",
+    "subtitle": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel.",
+    "button": "Add to cart"
+  }
+}
+  }
+

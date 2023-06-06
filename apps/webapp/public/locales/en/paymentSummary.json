@@ -1,0 +1,20 @@
+{
+  "title": "Payment summary",
+  "button": "Proceed to checkout",
+  "subtitle": "New payment method",
+  "Coupon": {
+    "label": "Coupon code",
+    "placeholder": "SaaS Design"
+  },
+  "tips": {
+    "label": "Tips",
+    "placeholder": "$ 5"
+  },
+  "info": {
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "tips": "Tips",
+    "discount": "Discount (coupon)",
+    "total": "Total (tax incl.)"
+  }
+}

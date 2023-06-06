@@ -28,7 +28,6 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps<any>>(
       required: isRequired = false,
       disabled: isDisabled = false,
       label = null,
-      color = 'primary',
       fullWidth = false,
       error = false,
       errorMessage = null,
@@ -65,7 +64,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps<any>>(
       isOpen: state.isOpen,
       isFocusVisible,
       fullWidth,
-      error
+      error,
     });
 
     return (

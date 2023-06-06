@@ -1,0 +1,21 @@
+{
+  "title": "Settings",
+  "menu": {
+    "account": {
+      "title": "Account",
+      "description": "Personal information"
+    },
+    "shipping": {
+      "title": "Address",
+      "description": "Shippings addresses"
+    },
+    "payment": {
+      "title": "Payment method",
+      "description": "Connected credit cards"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Password, 2FA"
+    }
+  }
+}

@@ -1,4 +1,13 @@
+import {  Nunito } from 'next/font/google';
+
 import './global.css';
+import { Providers } from './providers';
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-nunito',
+});
 
 export const metadata = {
   title: 'Welcome to webapp',
@@ -11,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={`${nunito.variable} font-sans`}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

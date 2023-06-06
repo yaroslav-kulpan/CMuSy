@@ -4,10 +4,14 @@ import { checkbox, CheckboxVariants } from './checkbox.theme';
 type CheckboxProps = Omit<ComponentPropsWithoutRef<'input'>, 'type'> &
   CheckboxVariants & {
     label?: string;
+    classNameWrapper?: string;
   };
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  function Checkbox({ label, className, color = 'primary', ...props }, ref) {
+  function Checkbox(
+    { label, className, color = 'primary', classNameWrapper, ...props },
+    ref
+  ) {
     const {
       base,
       input,
@@ -17,7 +21,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
     const id = useId();
     return (
-      <label className={base()}>
+      <label className={base({ className: classNameWrapper })}>
         <div className={inputWrapper()}>
           <input
             id={id}

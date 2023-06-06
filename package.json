@@ -8,6 +8,7 @@
   },
   "private": true,
   "dependencies": {
+    "@cmusy/plugin": "^0.2.0",
     "@headlessui/react": "^1.7.14",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
@@ -17,6 +18,8 @@
     "autosize": "^6.0.1",
     "axios": "^1.0.0",
     "clsx": "^1.2.1",
+    "commander": "^10.0.1",
+    "glob": "^8.1.0",
     "i": "^0.3.7",
     "next": "13.4.1",
     "npm": "^9.6.7",
@@ -24,6 +27,7 @@
     "react": "18.2.0",
     "react-aria": "^3.24.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.44.3",
     "react-stately": "^3.22.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
@@ -32,7 +36,6 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.14.5",
-    "@cmusy/plugin": "^0.1.0",
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
     "@jscutlery/semver": "^3.0.0",

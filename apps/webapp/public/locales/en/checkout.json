@@ -1,0 +1,24 @@
+{
+  "button": "Back to cart",
+  "title": "Select payment method",
+  "subtitle": "New payment method",
+
+    "newPayment": {
+      "title": "New payment method",
+      "addButton": "Add new payment method",
+      "checkButton": "Save this payment method",
+      "cardNumber": {
+        "label": "Card number",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      } ,  "expiration": {
+        "label": "Expiration",
+        "placeholder": "MM / YYYY"
+      },  "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },  "cardholder": {
+        "label": "Cardholder",
+        "placeholder": "Enter name on card"
+      }
+    }
+}

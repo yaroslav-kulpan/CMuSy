@@ -1,0 +1,48 @@
+{
+  "continue": "Continue",
+  "back": "Back",
+  "title": "A few steps to create your restaurant or personal account",
+  "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae.",
+
+  "accountStep": {
+    "title" : "Sign up",
+    "subtitle": "Register to create your personal account.",
+    "email": {
+      "label": "Email",
+      "placeholder": "name@example.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "min. 8 characters"
+    },
+    "confirmPassword": {
+      "label": "Confirm password",
+      "placeholder": "min. 8 characters"
+    }
+  },
+  "accountInformationStep": {
+    "title": "Additional info",
+    "subtitle": "Enter your additional information",
+    "checkButton": "Turn on 2 factor authentication",
+    "phone": {
+      "label": "Phone number",
+      "placeholder": "(111) 111-1111"
+    }
+  },
+  "confirmationStep": {
+    "title": "Confirmation",
+    "subtitle": "Enter your security code that we sent to your phone",
+    "checkButton": "Remember this device",
+    "code": {
+      "label": "Confirmation code",
+      "placeholder": "XXX - XXX - XXX"
+    }
+  },
+  "registerLink": {
+    "link" : "Sign up",
+    "title": "Register to create your personal account."
+  }
+  }
+
+
+

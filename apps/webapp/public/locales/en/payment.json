@@ -1,0 +1,21 @@
+{
+  "title": "Payment method",
+  "subtitle": "Connected payment methods",
+  "newPayment": {
+    "title": "New payment method",
+    "button": "Add new payment method",
+    "cardNumber": {
+      "label": "Card number",
+      "placeholder": "XXXX - XXXX - XXXX - XXXX"
+    } ,  "expiration": {
+      "label": "Expiration",
+      "placeholder": "MM / YYYY"
+    },  "cvc": {
+      "label": "CVC",
+      "placeholder": "XXX"
+    },  "cardholder": {
+      "label": "Cardholder",
+      "placeholder": "Enter name on card"
+    }
+  }
+}
