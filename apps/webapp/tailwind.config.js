@@ -1,10 +1,11 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
-const { join } = require('path');
+const theme = require('tailwindcss/defaultTheme');
 
-// console.log(require("@cmusy/plugin"))
+const { join } = require('path');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  presets: [require(join(process.cwd(), 'tailwindcss-workspace.preset.js'))],
   content: [
     join(
       __dirname,
@@ -13,7 +14,10 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-nunito)', ...theme.fontFamily.sans],
+      },
+    },
   },
-  plugins: [require("../../dist/libs/cmusy-ui-plugin")],
 };

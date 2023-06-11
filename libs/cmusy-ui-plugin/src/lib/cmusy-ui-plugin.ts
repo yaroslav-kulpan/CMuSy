@@ -6,14 +6,12 @@ import { deepMerge } from './deep-merge';
 
 module.exports = cmusyUiPlugin.withOptions(
   (options: CmusyTheme = {}) => {
-    return function ({ addBase, theme }) {
-      theme('');
-    };
+
   },
   function (options: CmusyTheme = {}) {
     return {
       theme: {
-        extend: deepMerge(options, defaultCmusyTheme),
+        extend: deepMerge(options, defaultCmusyTheme)
       },
     };
   }

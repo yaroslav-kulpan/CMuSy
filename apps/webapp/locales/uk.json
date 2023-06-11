@@ -1,0 +1,369 @@
+{
+  "common": {
+    "navigation": {
+      "login": "Увійти",
+      "register": "Створити обліковий запис",
+      "my-orders": "Мої замовлення",
+      "banner": "Отримайте безкоштовну доставку при замовленні на суму понад $100",
+      "links": {
+        "restaurants": "Ресторани",
+        "deals": "Угоди",
+        "colors": "Кольори",
+        "text": "Текстові поля",
+        "iconfont": "Іконки Iconfont",
+        "feather": "Іконки Feather"
+      }
+    }
+  },
+  "account": {
+    "title": "Налаштування",
+    "menu": {
+      "account": {
+        "title": "Обліковий запис",
+        "description": "Особиста інформація"
+      },
+      "shipping": {
+        "title": "Адреса",
+        "description": "Адреси доставки"
+      },
+      "payment": {
+        "title": "Спосіб оплати",
+        "description": "Підключені кредитні картки"
+      },
+      "security": {
+        "title": "Безпека",
+        "description": "Пароль, 2FA"
+      }
+    }
+  },
+  "profile": {
+    "title": "Особиста інформація",
+    "avatar": {
+      "title": "Аватар",
+      "change": "Змінити",
+      "remove": "Видалити"
+    },
+    "firstName": {
+      "label": "Ім'я",
+      "placeholder": "Ім'я"
+    },
+    "lastName": {
+      "label": "Прізвище",
+      "placeholder": "Прізвище"
+    },
+    "email": {
+      "label": "Електронна пошта",
+      "placeholder": "example@email.com"
+    },
+    "phone": {
+      "label": "Номер телефону",
+      "placeholder": "(099)-999-99-99"
+    },
+    "notification": {
+      "title": "Сповіщення електронною поштою",
+      "newDeals": "Нові угоди",
+      "orderStatus": "Статуси замовлень",
+      "passwordChanges": "Зміни пароля",
+      "newsletter": "Розсилка новин",
+      "specialOffers": "Спеціальні пропозиції",
+      "newRestaurants": "Нові ресторани"
+    },
+    "footer": {
+      "logout": "Вийти",
+      "discard": "Скасувати зміни",
+      "save": "Зберегти зміни"
+    }
+  },
+  "404": {
+    "errorCode": "404",
+    "title": "Сторінку не знайдено",
+    "description": "Перевірте URL в адресному рядку та спробуйте знову.",
+    "button": "Повернутися на головну",
+    "supportLink": "Зв'язатися з підтримкою"
+  },
+  "address": {
+    "title": "Адреса",
+    "existingShippingAddresses": {
+      "title": "Існуючі адреси доставки"
+    },
+    "newShippingAddress": {
+      "title": "Нова адреса доставки",
+      "button": "Додати нову адресу",
+      "country": {
+        "label": "Країна",
+        "placeholder": "Введіть країну"
+      },
+      "state": {
+        "label": "Штат",
+        "placeholder": "Введіть штат"
+      },
+      "city": {
+        "label": "Місто",
+        "placeholder": "Введіть місто"
+      },
+      "firstLine": {
+        "label": "Адреса 1",
+        "placeholder": "Введіть адресу"
+      },
+      "secondLine": {
+        "label": "Адреса 2",
+        "placeholder": "Введіть адресу (необов'язково)"
+      }
+    }
+  },
+  "cart": {
+    "title": "Моє кошик",
+    "menu": {
+      "title": "Меню",
+      "count": "{{count}} страв",
+      "add-meals": "Додати ще страви"
+    },
+    "tabs": {
+      "delivery": "Доставка",
+      "pickup": "Самовивіз"
+    },
+    "address": {
+      "select": "Виберіть адресу доставки",
+      "add": "Додати нову адресу доставки"
+    },
+    "pickup": {
+      "title": "Адреса ресторану"
+    },
+    "summary": {
+      "title": "Підсумок оплати",
+      "subtotal": "Підсумкова сума",
+      "shipping": "Доставка",
+      "total": "Всього (включаючи податок)",
+      "checkout": "Перейти до оформлення замовлення"
+    }
+  },
+  "checkout": {
+    "button": "Повернутися до кошика",
+    "title": "Виберіть спосіб оплати",
+    "subtitle": "Новий спосіб оплати",
+    "newPayment": {
+      "title": "Новий спосіб оплати",
+      "addButton": "Додати новий спосіб оплати",
+      "checkButton": "Зберегти цей спосіб оплати",
+      "cardNumber": {
+        "label": "Номер карти",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Термін дії",
+        "placeholder": "MM / YYYY"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Власник картки",
+        "placeholder": "Введіть ім'я на картці"
+      }
+    }
+
+
+  },
+  "deals": {
+    "title": "Усі акції",
+    "subtitle": "Промоції",
+    "validDateLabel": "Дійсно до",
+    "budge": "ПРОМО"
+  },
+  "forgot-password": {
+    "title": "Забули пароль",
+    "subtitle": "Введіть електронну пошту, пов'язану з вашим обліковим записом, і ми надішлемо вам електронний лист з інструкціями для скидання пароля.",
+    "back": "Повернутися до входу",
+    "label": "Електронна пошта",
+    "placeholder": "name@example.com",
+    "send": "Надіслати інструкції",
+    "link": "У вас є питання?"
+  },
+  "home": {
+    "deals": {
+      "title": "Гарячі акції",
+      "link": "Усі акції"
+    },
+    "restaurants": {
+      "title": "Ресторани поблизу",
+      "link": "Усі ресторани"
+    },
+    "more": "Завантажити ще"
+  },
+  "login": {
+    "title": "Вхід",
+    "description": "Увійдіть за допомогою даних, які ви вказали під час реєстрації.",
+    "email": {
+      "label": "Email",
+      "placeholder": "name@example.com"
+    },
+    "password": {
+      "label": "Пароль",
+      "placeholder": "мін. 8 символів"
+    },
+    "rememberMe": "Запам'ятати мене",
+    "submit": "Увійти",
+    "forgotPassword": "Забули пароль?",
+    "register": {
+      "label": "Немає облікового запису?",
+      "link": "Зареєструватися"
+    },
+    "marketing-slide": {
+      "title": "Залиште відгуки про всі страви",
+      "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae, eirmod assentior eum ne, et omnis antiopam mel.",
+      "reviews": {
+        "title": "Загальний рейтинг",
+        "rating": "4.2",
+        "votes": "3 голоси",
+        "addReview": "Залишити відгук",
+        "sort": "Сортувати за:",
+        "first": "Найновіші"
+      },
+      "card": {
+        "title": "Набір ролів",
+        "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe."
+      },
+      "product": {
+        "title": "Набір нігірі",
+        "subtitle": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel.",
+        "button": "Додати в кошик"
+      }
+    }
+  },
+  "order": {
+    "title": "Мої замовлення",
+    "button": "Мої замовлення",
+    "subtitle": "Статус замовлення",
+    "status": "У процесі"
+  },
+  "payment": {
+    "title": "Спосіб оплати",
+    "subtitle": "Підключені способи оплати",
+    "newPayment": {
+      "title": "Новий спосіб оплати",
+      "button": "Додати новий спосіб оплати",
+      "cardNumber": {
+        "label": "Номер карти",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Термін дії",
+        "placeholder": "MM / YYYY"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Власник картки",
+        "placeholder": "Введіть ім'я на картці"
+      }
+    }
+  },
+  "paymentSummary": {
+    "title": "Підсумок оплати",
+    "button": "Перейти до оформлення замовлення",
+    "subtitle": "Новий спосіб оплати",
+    "Coupon": {
+      "label": "Промокод",
+      "placeholder": "SaaS Design"
+    },
+    "tips": {
+      "label": "Чайові",
+      "placeholder": "$ 5"
+    },
+    "info": {
+      "subtotal": "Підсумкова сума",
+      "shipping": "Доставка",
+      "tips": "Чайові",
+      "discount": "Знижка (промокод)",
+      "total": "Всього (включаючи податок)"
+    }
+  },
+  "product": {
+    "backButton": "Royal Sushi House",
+    "button": "Додати в кошик",
+    "subTitle": "Рекомендується з",
+    "productInfo": {
+      "ingredients": "Інгредієнти",
+      "nutritionalValue": "Харчова цінність"
+    }
+  },
+  "restaurants": {
+    "title": "Усі ресторани",
+    "subtitle": "Знайдено 12 ресторанів",
+    "button": "Завантажити ще"
+  },
+  "security": {
+    "title": "Безпека",
+    "authentication": {
+      "title": "Двофакторна автентифікація",
+      "phoneNumber": {
+        "label": "Номер телефону",
+        "placeholder": "(111) 111-1111",
+        "button": "Увімкнути"
+      }
+    },
+    "changePassword": {
+      "title": "Зміна пароля",
+      "current": {
+        "label": "Поточний пароль",
+        "placeholder": "Введіть поточний пароль"
+      },
+      "new": {
+        "label": "Новий пароль",
+        "placeholder": "Введіть новий пароль"
+      },
+      "confirm": {
+        "label": "Підтвердження нового пароля",
+        "placeholder": "Підтвердження нового пароля"
+      },
+      "button": "Змінити пароль"
+    }
+  },
+  "sign-up": {
+    "continue": "Продовжити",
+    "back": "Назад",
+    "title": "Кілька кроків для створення вашого ресторану або особистого облікового запису",
+    "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae.",
+    "accountStep": {
+      "title": "Зареєструйтесь",
+      "subtitle": "Зареєструйтесь, щоб створити свій особистий обліковий запис.",
+      "email": {
+        "label": "Email",
+        "placeholder": "name@example.com"
+      },
+      "password": {
+        "label": "Пароль",
+        "placeholder": "мін. 8 символів"
+      },
+      "confirmPassword": {
+        "label": "Підтвердження пароля",
+        "placeholder": "мін. 8 символів"
+      }
+    },
+    "accountInformationStep": {
+      "title": "Додаткова інформація",
+      "subtitle": "Введіть вашу додаткову інформацію",
+      "checkButton": "Увімкнути двофакторну автентифікацію",
+      "phone": {
+        "label": "Номер телефону",
+        "placeholder": "(111) 111-1111"
+      }
+    },
+    "confirmationStep": {
+      "title": "Підтвердження",
+      "subtitle": "Введіть код безпеки, який ми надіслали на ваш телефон",
+      "checkButton": "Запам'ятати цей пристрій",
+      "code": {
+        "label": "Код підтвердження",
+        "placeholder": "XXX - XXX - XXX"
+      }
+    },
+    "registerLink": {
+      "link": "Зареєструватися",
+      "title": "Зареєструйтесь, щоб створити свій особистий обліковий запис."
+    }
+  }
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { stepTheme } from './stepper.theme';
+import { stepTheme, StepVariants } from './stepper.theme';
 import { IconCheck } from './icon-check';
 
-export type StepProps = {
+export type StepProps = StepVariants & {
   hasActive?: boolean;
   step?: number;
   activeStep?: number;
@@ -19,6 +19,7 @@ export function Step({
   count: totalChildren = 0,
   label,
   description,
+  variant = 'point-numeric',
 }: React.PropsWithChildren<StepProps>) {
   const normalizedStep = step + 1;
   const hasNextStep = step > activeStep;
@@ -37,13 +38,14 @@ export function Step({
     hasCurrentStep,
     hasNextStep,
     hasCompletedStep,
+    variant,
   });
 
   return (
     <div className={root()}>
       <div className={stepWrapper()}>
         <span className={countWrapper()}>
-          {step >= activeStep && (
+          {variant === 'point-numeric' && step >= activeStep && (
             <span className={subtitle()}>{normalizedStep}</span>
           )}
           {hasCompletedStep && <IconCheck />}

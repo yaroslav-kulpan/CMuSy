@@ -1,7 +1,13 @@
-import { tv } from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
 
 export const stepper = tv({
-  base: "flex gap-x-6"
+  base: 'flex',
+  variants: {
+    variant: {
+      point: 'gap-x-3',
+      'point-numeric': 'gap-x-6',
+    },
+  },
 });
 
 export const stepTheme = tv({
@@ -19,7 +25,8 @@ export const stepTheme = tv({
   variants: {
     variant: {
       point: {
-        countWrapper: '',
+        stepWrapper: 'flex items-center gap-x-3',
+        countWrapper: 'h-4 w-4',
         connector: '',
       },
       'point-numeric': {
@@ -56,3 +63,6 @@ export const stepTheme = tv({
     },
   ],
 });
+
+export type StepperVariants = VariantProps<typeof stepper>;
+export type StepVariants = VariantProps<typeof stepTheme>;

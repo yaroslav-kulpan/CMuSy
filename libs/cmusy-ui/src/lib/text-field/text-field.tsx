@@ -16,8 +16,11 @@ import Typography from '../typography';
 
 type Variant = 'outlined' | 'filled';
 
-export type ITextFieldProps = React.ComponentPropsWithoutRef<'input'> &
-  Omit<AriaTextFieldProps, 'isDisabled' | 'isReadOnly' | 'isRequired'> & {
+export type ITextFieldProps = Omit<
+  AriaTextFieldProps,
+  'isDisabled' | 'isReadOnly' | 'isRequired' | 'onChange'
+> &
+  React.ComponentPropsWithoutRef<'input'> & {
     variant?: Variant;
     color?: 'primary';
     label?: string | null;
@@ -62,7 +65,10 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
     } = props;
     const inputRef = useDomRef(ref);
     const { inputProps, labelProps, errorMessageProps, descriptionProps } =
-      useTextField({ isDisabled, isReadOnly, isRequired, ...props }, inputRef);
+      useTextField(
+        { isDisabled, isReadOnly, isRequired, ...props } as AriaTextFieldProps,
+        inputRef
+      );
 
     const { focusProps: clearFocusFocusProps } = useFocusRing();
     const {

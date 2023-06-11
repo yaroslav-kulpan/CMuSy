@@ -1,0 +1,26 @@
+{
+  "title": "My cart",
+  "menu": {
+    "title": "Menu",
+    "count": "{{count}} meals",
+    "add-meals": "Add more meals"
+  },
+  "tabs": {
+    "delivery": "Delivery",
+    "pickup": "Pick up"
+  },
+  "address": {
+    "select": "Select your shipping address",
+    "add": "Add new shipping address"
+  },
+  "pickup": {
+    "title": "Restaurant address"
+  },
+  "summary": {
+    "title": "Payment summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total (tax incl.)",
+    "checkout": "Proceed to checkout"
+  }
+}

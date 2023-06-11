@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.4.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.4.0...cmusy-ui-0.4.1) (2023-06-04)
+
 ## [0.4.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.3.0...cmusy-ui-0.4.0) (2023-06-04)
 
 

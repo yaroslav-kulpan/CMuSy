@@ -53,7 +53,7 @@ const button = tv({
     {
       variant: 'text',
       disabled: true,
-      class: 'text-neutral-lightest-gray',
+      class: 'text-neutral-gray-lightest',
     },
     // Contained variants
     {
@@ -78,7 +78,7 @@ const button = tv({
       variant: 'contained',
       disabled: true,
       class:
-        'bg-neutral-background text-neutral-light-gray border-neutral-lightest-gray',
+        'bg-neutral-background text-neutral-gray-light shadow-none',
     },
     // Outlined
     {
@@ -103,7 +103,7 @@ const button = tv({
     {
       variant: 'outlined',
       disabled: true,
-      class: 'text-neutral-light-gray border-neutral-light-gray',
+      class: 'text-neutral-gray-light border-neutral-gray-light',
     },
     {
       variant: 'small',
@@ -131,7 +131,7 @@ const button = tv({
     {
       variant: 'small',
       disabled: true,
-      class: 'border-neutral-lightest-gray text-neutral-lightest-gray',
+      class: 'border-neutral-gray-lightest text-neutral-gray-lightest',
     },
   ],
   defaultVariants: {

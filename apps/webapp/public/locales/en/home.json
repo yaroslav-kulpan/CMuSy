@@ -1,0 +1,11 @@
+{
+  "deals": {
+    "title": "Hottest deals",
+    "link": "All deals"
+  },
+  "restaurants": {
+    "title": "Nearby restaurants",
+    "link": "All Restaurants"
+  },
+  "more": "Load more"
+}

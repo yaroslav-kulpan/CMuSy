@@ -1,0 +1,31 @@
+{
+  "title": "Security",
+
+
+  "authentication": {
+    "title": "2 factor authentication",
+    "phoneNumber": {
+      "label": "Phone number",
+      "placeholder": "(111) 111-1111",
+      "button": "Turn on"
+    }
+  },
+
+
+  "changePassword": {
+    "title": "Change password",
+    "current": {
+      "label": "Current password",
+      "placeholder": "Enter current password"
+    } ,
+    "new": {
+      "label": "New password",
+      "placeholder": "Enter new password"
+    },
+    "confirm": {
+      "label": "Confirm new password",
+      "placeholder": "Confirm new password"
+    },
+    "button": "Change password"
+  }
+}
