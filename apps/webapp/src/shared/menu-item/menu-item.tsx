@@ -36,7 +36,7 @@ export const MenuItem = forwardRef<
   const linkRef = useDomRef(ref);
   const { linkProps } = useLink(props as any, linkRef);
   const currentRoute = usePathname();
-  const isActive = currentRoute === props.href;
+  const isActive = currentRoute.includes(props.href as string);
 
   return (
     <Link

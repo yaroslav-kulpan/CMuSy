@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { stepper } from './stepper.theme';
+import { stepper, StepperVariants } from './stepper.theme';
 
-export type StepsProps = {
+export type StepsProps = StepperVariants & {
   activeStep: number;
   className?: string;
   unmountOnExit?: boolean;
@@ -13,6 +13,7 @@ export function Stepper({
   children,
   className,
   unmountOnExit,
+  variant,
 }: React.PropsWithChildren<StepsProps>) {
   const count = React.Children.count(children);
   const stepContent =
@@ -32,10 +33,10 @@ export function Stepper({
   });
 
   return (
-    <div>
-      <div className={stepper({ className })}>{itemsSteps}</div>
+    <>
+      <div className={stepper({ variant, className })}>{itemsSteps}</div>
       {stepContent}
-    </div>
+    </>
   );
 }
 

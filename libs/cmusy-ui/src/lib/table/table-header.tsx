@@ -6,7 +6,7 @@ import { useTable, useTableAction } from './context/table.context';
 import { tableHeader, TableHeaderVariants } from './table.theme';
 
 type TableHeaderProps = React.ComponentPropsWithoutRef<'thead'> &
-  TableHeaderVariants;
+  Omit<TableHeaderVariants, 'class'>;
 
 export function TableHeader({
   children,

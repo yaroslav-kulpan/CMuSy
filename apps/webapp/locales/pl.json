@@ -1,0 +1,368 @@
+{
+  "common": {
+    "navigation": {
+      "login": "Zaloguj się",
+      "register": "Utwórz konto",
+      "my-orders": "Moje zamówienia",
+      "banner": "Darmowa dostawa przy zamówieniach powyżej 100 $",
+      "links": {
+        "restaurants": "Restauracje",
+        "deals": "Oferty",
+        "colors": "Kolory",
+        "text": "Pola tekstowe",
+        "iconfont": "Ikony Iconfont",
+        "feather": "Ikony Feather"
+      }
+    }
+  },
+  "account": {
+    "title": "Ustawienia",
+    "menu": {
+      "account": {
+        "title": "Konto",
+        "description": "Dane osobowe"
+      },
+      "shipping": {
+        "title": "Adres",
+        "description": "Adresy dostawy"
+      },
+      "payment": {
+        "title": "Metoda płatności",
+        "description": "Podłączone karty kredytowe"
+      },
+      "security": {
+        "title": "Bezpieczeństwo",
+        "description": "Hasło, 2FA"
+      }
+    }
+  },
+  "profile": {
+    "title": "Dane osobowe",
+    "avatar": {
+      "title": "Awatar",
+      "change": "Zmień",
+      "remove": "Usuń"
+    },
+    "firstName": {
+      "label": "Imię",
+      "placeholder": "Imię"
+    },
+    "lastName": {
+      "label": "Nazwisko",
+      "placeholder": "Nazwisko"
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "przyklad@adres.com"
+    },
+    "phone": {
+      "label": "Numer telefonu",
+      "placeholder": "(099)-999-99-99"
+    },
+    "notification": {
+      "title": "Powiadomienia e-mail",
+      "newDeals": "Nowe oferty",
+      "orderStatus": "Statusy zamówień",
+      "passwordChanges": "Zmiany hasła",
+      "newsletter": "Newsletter",
+      "specialOffers": "Specjalne oferty",
+      "newRestaurants": "Nowe restauracje"
+    },
+    "footer": {
+      "logout": "Wyloguj",
+      "discard": "Odrzuć zmiany",
+      "save": "Zapisz zmiany"
+    }
+  },
+  "404": {
+    "errorCode": "404",
+    "title": "Nie znaleziono strony",
+    "description": "Sprawdź URL w pasku adresu i spróbuj ponownie.",
+    "button": "Powróć na stronę główną",
+    "supportLink": "Skontaktuj się z pomocą techniczną"
+  },
+  "address": {
+    "title": "Adres",
+    "existingShippingAddresses": {
+      "title": "Istniejące adresy dostawy"
+    },
+    "newShippingAddress": {
+      "title": "Nowy adres dostawy",
+      "button": "Dodaj nowy adres",
+      "country": {
+        "label": "Kraj",
+        "placeholder": "Wprowadź kraj"
+      },
+      "state": {
+        "label": "Stan",
+        "placeholder": "Wprowadź stan"
+      },
+      "city": {
+        "label": "Miasto",
+        "placeholder": "Wprowadź miasto"
+      },
+      "firstLine": {
+        "label": "Adres linia 1",
+        "placeholder": "Wprowadź adres"
+      },
+      "secondLine": {
+        "label": "Adres linia 2",
+        "placeholder": "Wprowadź adres (opcjonalnie)"
+      }
+    }
+  },
+  "cart": {
+    "title": "Mój koszyk",
+    "menu": {
+      "title": "Menu",
+      "count": "{{count}} posiłków",
+      "add-meals": "Dodaj więcej posiłków"
+    },
+    "tabs": {
+      "delivery": "Dostawa",
+      "pickup": "Odbiór osobisty"
+    },
+    "address": {
+      "select": "Wybierz swój adres dostawy",
+      "add": "Dodaj nowy adres dostawy"
+    },
+    "pickup": {
+      "title": "Adres restauracji"
+    },
+    "summary": {
+      "title": "Podsumowanie płatności",
+      "subtotal": "Suma częściowa",
+      "shipping": "Dostawa",
+      "total": "Suma (z podatkiem)",
+      "checkout": "Przejdź do realizacji zamówienia"
+    }
+  },
+  "checkout": {
+    "button": "Powróć do koszyka",
+    "title": "Wybierz metodę płatności",
+    "subtitle": "Nowa metoda płatności",
+    "newPayment": {
+      "title": "Nowa metoda płatności",
+      "addButton": "Dodaj nową metodę płatności",
+      "checkButton": "Zapisz tę metodę płatności",
+      "cardNumber": {
+        "label": "Numer karty",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Data ważności",
+        "placeholder": "MM / RRRR"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Właściciel karty",
+        "placeholder": "Wprowadź nazwisko na karcie"
+      }
+    }
+  },
+  "deals": {
+    "title": "Wszystkie oferty",
+    "subtitle": "Promowane",
+    "validDateLabel": "Ważne do",
+    "budge": "PROMOCJA"
+  },
+  "forgot-password": {
+    "title": "Zapomniałeś hasła",
+    "subtitle": "Podaj adres e-mail powiązany z Twoim kontem, a wyślemy Ci e-mail z instrukcjami dotyczącymi resetowania hasła.",
+    "back": "Powrót do logowania",
+    "label": "E-mail",
+    "placeholder": "nazwa@przyklad.com",
+    "send": "Wyślij instrukcje",
+    "link": "Masz jakieś pytania?"
+  },
+  "home": {
+    "deals": {
+      "title": "Najlepsze oferty",
+      "link": "Wszystkie oferty"
+    },
+    "restaurants": {
+      "title": "Restauracje w pobliżu",
+      "link": "Wszystkie restauracje"
+    },
+    "more": "Załaduj więcej"
+  },
+  "login": {
+    "title": "Logowanie",
+    "description": "Zaloguj się za pomocą danych, które podałeś podczas rejestracji.",
+    "email": {
+      "label": "E-mail",
+      "placeholder": "nazwa@przyklad.com"
+    },
+    "password": {
+      "label": "Hasło",
+      "placeholder": "min. 8 znaków"
+    },
+    "rememberMe": "Zapamiętaj mnie",
+    "submit": "Zaloguj się",
+    "forgotPassword": "Zapomniałeś hasła",
+    "register": {
+      "label": "Nie masz konta?",
+      "link": "Zarejestruj się"
+    },
+    "marketing-slide": {
+      "title": "Dodawaj recenzje do wszystkich dań",
+      "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae, eirmod assentior eum ne, et omnis antiopam mel.",
+      "reviews": {
+        "title": "Ogólna ocena",
+        "rating": "4.2",
+        "votes": "3 głosy",
+        "addReview": "Dodaj recenzję",
+        "sort": "Sortuj według:",
+        "first": "Najnowsze"
+      },
+      "card": {
+        "title": "Zestaw rol",
+        "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe."
+      },
+      "product": {
+        "title": "Zestaw nigiri",
+        "subtitle": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel.",
+        "button": "Dodaj do koszyka"
+      }
+    }
+  },
+  "order": {
+    "title": "Moje zamówienia",
+    "button": "Moje zamówienia",
+    "subtitle": "Status zamówienia",
+    "status": "W trakcie realizacji"
+  },
+  "payment": {
+    "title": "Metoda płatności",
+    "subtitle": "Podłączone metody płatności",
+    "newPayment": {
+      "title": "Nowa metoda płatności",
+      "button": "Dodaj nową metodę płatności",
+      "cardNumber": {
+        "label": "Numer karty",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Data ważności",
+        "placeholder": "MM / RRRR"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Właściciel karty",
+        "placeholder": "Wprowadź nazwisko na karcie"
+      }
+    }
+  },
+  "paymentSummary": {
+    "title": "Podsumowanie płatności",
+    "button": "Przejdź do realizacji zamówienia",
+    "subtitle": "Nowa metoda płatności",
+    "Coupon": {
+      "label": "Kod kuponu",
+      "placeholder": "SaaS Design"
+    },
+    "tips": {
+      "label": "Napiwek",
+
+      "placeholder": "$ 5"
+    },
+    "info": {
+      "subtotal": "Suma częściowa",
+      "shipping": "Dostawa",
+      "tips": "Napiwek",
+      "discount": "Rabat (kupon)",
+      "total": "Suma (z podatkiem)"
+    }
+  },
+  "product": {
+    "backButton": "Royal Sushi House",
+    "button": "Dodaj do koszyka",
+    "subTitle": "Polecane z",
+    "productInfo": {
+      "ingredients": "Składniki",
+      "nutritionalValue": "Wartość odżywcza"
+    }
+  },
+  "restaurants": {
+    "title": "Wszystkie restauracje",
+    "subtitle": "Znaleziono 12 restauracji",
+    "button": "Załaduj więcej"
+  },
+  "security": {
+    "title": "Bezpieczeństwo",
+    "authentication": {
+      "title": "Uwierzytelnianie dwuskładnikowe",
+      "phoneNumber": {
+        "label": "Numer telefonu",
+        "placeholder": "(111) 111-1111",
+        "button": "Włącz"
+      }
+    },
+    "changePassword": {
+      "title": "Zmień hasło",
+      "current": {
+        "label": "Aktualne hasło",
+        "placeholder": "Wprowadź aktualne hasło"
+      },
+      "new": {
+        "label": "Nowe hasło",
+        "placeholder": "Wprowadź nowe hasło"
+      },
+      "confirm": {
+        "label": "Potwierdź nowe hasło",
+        "placeholder": "Potwierdź nowe hasło"
+      },
+      "button": "Zmień hasło"
+    }
+  },
+  "sign-up": {
+    "continue": "Kontynuuj",
+    "back": "Powrót",
+    "title": "Kilka kroków, aby utworzyć swoje konto restauracji lub osobiste",
+    "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae.",
+    "accountStep": {
+      "title": "Zarejestruj się",
+      "subtitle": "Zarejestruj się, aby utworzyć swoje osobiste konto.",
+      "email": {
+        "label": "E-mail",
+        "placeholder": "nazwa@przyklad.com"
+      },
+      "password": {
+        "label": "Hasło",
+        "placeholder": "min. 8 znaków"
+      },
+      "confirmPassword": {
+        "label": "Potwierdź hasło",
+        "placeholder": "min. 8 znaków"
+      }
+    },
+    "accountInformationStep": {
+      "title": "Dodatkowe informacje",
+      "subtitle": "Wprowadź dodatkowe informacje",
+      "checkButton": "Włącz uwierzytelnianie dwuskładnikowe",
+      "phone": {
+        "label": "Numer telefonu",
+        "placeholder": "(111) 111-1111"
+      }
+    },
+    "confirmationStep": {
+      "title": "Potwierdzenie",
+      "subtitle": "Wprowadź kod zabezpieczający, który wysłaliśmy na Twój telefon",
+      "checkButton": "Zapamiętaj to urządzenie",
+      "code": {
+        "label": "Kod potwierdzenia",
+        "placeholder": "XXX - XXX - XXX"
+      }
+    },
+    "registerLink": {
+      "link": "Zarejestruj się",
+      "title": "Zarejestruj się, aby utworzyć swoje osobiste konto."
+    }
+  }
+}

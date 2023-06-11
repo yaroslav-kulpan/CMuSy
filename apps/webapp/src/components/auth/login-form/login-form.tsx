@@ -7,8 +7,10 @@ import {
   TextField,
   Typography,
 } from '@cmusy/ui';
+import { useTranslations } from 'next-intl';
 
 export function LoginForm() {
+  const t = useTranslations('login');
   return (
     <div className="flex flex-col flex-1 h-full justify-between mx-auto max-w-sm md:max-w-xs">
       <Link href="/" className="mt-5">
@@ -22,30 +24,32 @@ export function LoginForm() {
       </Link>
       <form>
         <Typography variant="h1" color="text-neutral-black mt-32">
-          Login
+          {t('title')}
         </Typography>
         <Typography variant="body-1" as="p" className="mt-4 mb-8">
-          Sign in with your data that you entered during your registration.
+          {t('description')}
         </Typography>
         <TextField
           name="email"
-          label="Email"
           type="email"
           id="email"
+          label={t('email.label')}
+          placeholder={t('email.placeholder')}
           autoComplete="username"
           required
           fullWidth
         />
         <PasswordField
           name="password"
-          label="Password"
           autoComplete="current-password"
           id="current-password"
+          label={t('password.label')}
+          placeholder={t('password.placeholder')}
           classNameWrapper="mt-7"
           required
           fullWidth
         />
-        <Checkbox classNameWrapper="mt-8" label="Keep me logged in" />
+        <Checkbox classNameWrapper="mt-8" label={t('rememberMe')} />
         <Button
           type="submit"
           variant="contained"
@@ -53,18 +57,18 @@ export function LoginForm() {
           className="mt-10"
           fullWidth
         >
-          Login
+          {t('submit')}
         </Button>
         <Button variant="text" color="primary" className="mt-3" fullWidth>
-          Forgot password
+          {t('forgotPassword')}
         </Button>
       </form>
       <div className="flex justify-center items-center mb-10 whitespace-nowrap">
         <Typography variant="body-1" className="text-neutral-dark">
-          Don’t have an account?
+          {t('register.label')}
         </Typography>
         <Link href="/sign-up" className="text-primary ml-1">
-          Sign up
+          {t('register.link')}
         </Link>
       </div>
     </div>

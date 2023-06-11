@@ -1,28 +1,39 @@
 'use client';
-import {Button, Card, CardContent, PasswordField, TextField, Typography} from '@cmusy/ui';
+import {
+  Button,
+  Card,
+  CardContent,
+  PasswordField,
+  TextField,
+  Typography,
+} from '@cmusy/ui';
+import { useTranslations } from 'next-intl';
 
 export function SecurityViewPage() {
+  const t = useTranslations('security');
   return (
     <Card>
       <CardContent>
         <Typography variant="h6" color="text-neutral-black">
-          2 factor authentication
+          {t('authentication.title')}
         </Typography>
 
         <div className="mt-4 grid grid-cols-2">
           <TextField
+            classNameWrapper="col-span-2 md:col-span-1"
+            name="phone"
             type="tel"
-            label="Phone number"
-            placeholder="(217) 555-0113"
+            label={t('authentication.phoneNumber.label')}
+            placeholder={t('authentication.phoneNumber.placeholder')}
             fullWidth
           />
-          <div className="flex justify-end items-end">
+          <div className="mt-8 md:mt-0 col-span-2 md:col-span-1 flex justify-end items-end">
             <Button
               variant="contained"
               color="primary"
-              className="shadow-button"
+              className="w-full md:w-36"
             >
-              Turn on
+              {t('authentication.phoneNumber.button')}
             </Button>
           </div>
         </div>
@@ -31,30 +42,38 @@ export function SecurityViewPage() {
           color="text-neutral-black"
           className="mt-12 mb-4"
         >
-          Change password
+          {t('changePassword.title')}
         </Typography>
 
-        <div className="grid grid-cols-3 gap-x-4">
+        <div className="grid grid-cols-3 gap-y-4 gap-x-4">
           <PasswordField
-            label="Current password"
-            placeholder="Enter current password"
+            classNameWrapper="col-span-3 md:col-span-1"
+            label={t('changePassword.current.label')}
+            placeholder={t('changePassword.current.placeholder')}
             fullWidth
           />
           <PasswordField
-            label="New password"
-            placeholder="Enter new password"
+            classNameWrapper="col-span-3 md:col-span-1"
+            label={t('changePassword.new.label')}
+            placeholder={t('changePassword.new.placeholder')}
             fullWidth
           />
           <PasswordField
-            label="Confirm new password"
-            placeholder="Confirm new password"
+            classNameWrapper="col-span-3 md:col-span-1"
+            label={t('changePassword.confirm.label')}
+            placeholder={t('changePassword.confirm.placeholder')}
             fullWidth
           />
         </div>
 
         <div className="flex justify-end mt-8">
-          <Button variant="contained" color="primary" disabled>
-            Change password
+          <Button
+            variant="contained"
+            color="primary"
+            className="w-full md:w-52"
+            disabled
+          >
+            {t('changePassword.button')}
           </Button>
         </div>
       </CardContent>

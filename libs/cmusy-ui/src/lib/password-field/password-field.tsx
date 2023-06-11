@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { useFocusRing } from 'react-aria';
 
 import TextField, { ITextFieldProps } from '../text-field';
@@ -17,6 +17,7 @@ export const PasswordField = React.forwardRef<
 >(function PasswordField(props, ref) {
   const [showPassword, setShowPassword] = React.useState(false);
   const { focusProps: toggleFocusProps } = useFocusRing();
+  const id = useId();
   const togglePassword = () => setShowPassword((prevState) => !prevState);
   const type = showPassword ? 'text' : 'password';
   const ariaLabel = showPassword
@@ -55,7 +56,7 @@ export const PasswordField = React.forwardRef<
       endAdornment={
         <button
           type="button"
-          id="toggle-password"
+          id={`toggle-password-${id}`}
           aria-label={ariaLabel}
           onClick={togglePassword}
           {...toggleFocusProps}

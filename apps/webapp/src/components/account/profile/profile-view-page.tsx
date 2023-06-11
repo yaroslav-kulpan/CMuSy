@@ -2,7 +2,7 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Image from 'next/image';
-
+import { useTranslations } from 'next-intl';
 import {
   Button,
   Card,
@@ -13,11 +13,20 @@ import {
 } from '@cmusy/ui';
 
 export function ProfileViewPage() {
+  const t = useTranslations('profile');
   const { register, reset, handleSubmit } = useForm({
     defaultValues: {
       firstName: '',
       lastName: '',
       email: '',
+      notification: {
+        newDeals: true,
+        newRestaurants: true,
+        orderStatus: false,
+        passwordChanges: false,
+        specialOffers: false,
+        newsletter: false,
+      },
     },
   });
 
@@ -48,11 +57,11 @@ export function ProfileViewPage() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <CardContent>
             <Typography variant="h6" color="text-neutral-black">
-              Personal information
+              {t('title')}
             </Typography>
             <div className="mt-5">
               <Typography variant="small-2" className="inline-block mb-2">
-                Avatar
+                {t('avatar.title')}
               </Typography>
               <div className="flex items-center gap-4">
                 <Image
@@ -63,38 +72,37 @@ export function ProfileViewPage() {
                   alt="Avatar"
                 />
                 <Button variant="outlined" color="primary">
-                  Change
+                  {t('avatar.change')}
                 </Button>
                 <Button variant="text" color="secondary">
-                  Remove
+                  {t('avatar.remove')}
                 </Button>
               </div>
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-y-8 gap-x-4">
+            <div className="mt-4 grid md:grid-cols-2 gap-y-8 gap-x-4">
               <TextField
                 {...register('firstName')}
-                label="First name"
-                placeholder="First name"
+                label={t('firstName.label')}
+                placeholder={t('firstName.placeholder')}
                 fullWidth
               />
-
               <TextField
                 {...register('lastName')}
-                label="Last name"
-                placeholder="Last name"
+                label={t('lastName.label')}
+                placeholder={t('lastName.placeholder')}
                 fullWidth
               />
               <TextField
                 {...register('email')}
                 type="email"
-                label="Email"
-                placeholder="Email"
+                label={t('email.label')}
+                placeholder={t('email.placeholder')}
                 fullWidth
               />
               <TextField
                 type="tel"
-                label="Phone"
-                placeholder="Phone"
+                label={t('phone.label')}
+                placeholder={t('phone.placeholder')}
                 fullWidth
               />
             </div>
@@ -105,22 +113,40 @@ export function ProfileViewPage() {
                 color="text-neutral-black"
                 className="mb-4"
               >
-                Email notifications
+                {t('notification.title')}
               </Typography>
 
-              <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-                <Checkbox label="New deals" />
-                <Checkbox label="Password changes" />
-                <Checkbox label="New restaurants" />
-                <Checkbox label="Special offers" />
-                <Checkbox label="Order statuses" />
-                <Checkbox label="Newsletter" />
+              <div className="grid md:grid-cols-2 gap-x-4 gap-y-6">
+                <Checkbox
+                  {...register('notification.newDeals')}
+                  label={t('notification.newDeals')}
+                />
+                <Checkbox
+                  {...register('notification.newRestaurants')}
+                  label={t('notification.newRestaurants')}
+                />
+                <Checkbox
+                  {...register('notification.orderStatus')}
+                  label={t('notification.orderStatus')}
+                />
+                <Checkbox
+                  {...register('notification.passwordChanges')}
+                  label={t('notification.passwordChanges')}
+                />
+                <Checkbox
+                  {...register('notification.specialOffers')}
+                  label={t('notification.specialOffers')}
+                />
+                <Checkbox
+                  {...register('notification.newsletter')}
+                  label={t('notification.newsletter')}
+                />
               </div>
             </div>
           </CardContent>
           <div className="flex justify-between px-5 py-5 mt-5 border-t border-neutral-lightest-gray">
             <Button variant="outlined" color="danger">
-              Log out
+              {t('footer.logout')}
             </Button>
             <div className="flex gap-x-4">
               <Button
@@ -128,10 +154,10 @@ export function ProfileViewPage() {
                 color="secondary"
                 onClick={handleDiscardChange}
               >
-                Discard changes
+                {t('footer.discard')}
               </Button>
               <Button type="submit" variant="contained" color="primary">
-                Save changes
+                {t('footer.save')}
               </Button>
             </div>
           </div>

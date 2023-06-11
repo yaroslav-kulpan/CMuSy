@@ -17,3 +17,4 @@ export * from './lib/tabs';
 export * from './lib/card';
 export * from './lib/stepper';
 export * from './lib/modal';
+export * from "./lib/table";

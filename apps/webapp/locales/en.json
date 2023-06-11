@@ -1,0 +1,375 @@
+{
+  "common": {
+    "navigation": {
+      "login": "Sign in",
+      "register": "Create an account",
+      "my-orders": "My orders",
+      "banner": "Get free delivery on orders over $100",
+      "links": {
+        "restaurants": "Restaurants",
+        "deals": "Deals",
+        "colors": "Colors",
+        "text": "Text Fields",
+        "iconfont": "Iconfont icons",
+        "feather": "Feather icons"
+      }
+    }
+  },
+  "account": {
+    "title": "Settings",
+    "menu": {
+      "account": {
+        "title": "Account",
+        "description": "Personal information"
+      },
+      "shipping": {
+        "title": "Address",
+        "description": "Shippings addresses"
+      },
+      "payment": {
+        "title": "Payment method",
+        "description": "Connected credit cards"
+      },
+      "security": {
+        "title": "Security",
+        "description": "Password, 2FA"
+      }
+    }
+  },
+  "profile": {
+    "title": "Personal information",
+    "avatar": {
+      "title": "Avatar",
+      "change": "Change",
+      "remove": "Remove"
+    },
+    "firstName": {
+      "label": "First Name",
+      "placeholder": "First Name"
+    },
+    "lastName": {
+      "label": "Last Name",
+      "placeholder": "Last Name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "example@email.com"
+    },
+    "phone": {
+      "label": "Phone number",
+      "placeholder": "(099)-999-99-99"
+    },
+    "notification": {
+      "title": "Email notifications",
+      "newDeals": "New deals",
+      "orderStatus": "Order statuses",
+      "passwordChanges": "Password changes",
+      "newsletter": "Newsletter",
+      "specialOffers": "Special offers",
+      "newRestaurants": "New restaurants"
+    },
+    "footer": {
+      "logout": "Logout",
+      "discard": "Discard changes",
+      "save": "Save changes"
+    }
+  },
+  "404": {
+    "errorCode": "404",
+    "title": "Page not found",
+    "description": "Please check the URL in the address bar and try again.",
+    "button": "Go back home",
+    "supportLink": "Contact support"
+  },
+  "address": {
+    "title": "Address",
+    "existingShippingAddresses": {
+      "title": "Existing shipping addresses"
+    },
+    "newShippingAddress": {
+      "title": "New shipping address",
+
+      "button": "Add new address",
+
+      "country": {
+        "label": "Country",
+        "placeholder": "Enter country"
+      },
+
+      "state": {
+        "label": "State",
+        "placeholder": "Enter state"
+      },
+
+      "city": {
+        "label": "City",
+        "placeholder": "Enter city"
+      },
+
+      "firstLine": {
+        "label": "Address line 1",
+        "placeholder": "Enter address"
+      },
+
+      "secondLine": {
+        "label": "Address line 2",
+        "placeholder": "Enter address (optional)"
+      }
+    }
+  },
+  "cart": {
+    "title": "My cart",
+    "menu": {
+      "title": "Menu",
+      "count": "{{count}} meals",
+      "add-meals": "Add more meals"
+    },
+    "tabs": {
+      "delivery": "Delivery",
+      "pickup": "Pick up"
+    },
+    "address": {
+      "select": "Select your shipping address",
+      "add": "Add new shipping address"
+    },
+    "pickup": {
+      "title": "Restaurant address"
+    },
+    "summary": {
+      "title": "Payment summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total (tax incl.)",
+      "checkout": "Proceed to checkout"
+    }
+  },
+  "checkout": {
+    "button": "Back to cart",
+    "title": "Select payment method",
+    "subtitle": "New payment method",
+
+    "newPayment": {
+      "title": "New payment method",
+      "addButton": "Add new payment method",
+      "checkButton": "Save this payment method",
+      "cardNumber": {
+        "label": "Card number",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Expiration",
+        "placeholder": "MM / YYYY"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Cardholder",
+        "placeholder": "Enter name on card"
+      }
+    }
+  },
+  "deals": {
+    "title": "All dials",
+    "subtitle": "Promoted",
+    "validDateLabel": "Valid through",
+    "budge": "PROMOTED"
+  },
+  "forgot-password": {
+    "title": "Forgot password",
+    "subtitle": "Enter the email associated with your account and we’ll send an email with instructions to reset your password.",
+    "back": "Back to login",
+    "label": "Email",
+    "placeholder": "name@example.com",
+    "send": "Send instructions",
+    "link": "Do you have any questions?"
+  },
+  "home": {
+    "deals": {
+      "title": "Hottest deals",
+      "link": "All deals"
+    },
+    "restaurants": {
+      "title": "Nearby restaurants",
+      "link": "All Restaurants"
+    },
+    "more": "Load more"
+  },
+  "login": {
+    "title": "Login",
+    "description": "Sign in with your data that you entered during your registration.",
+    "email": {
+      "label": "Email",
+      "placeholder": "name@example.com"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "min. 8 characters"
+    },
+    "rememberMe": "Keep me logged in",
+    "submit": "Login",
+    "forgotPassword": "Forgot password",
+    "register": {
+      "label": "Don’t have an account?",
+      "link": "Sign Up"
+    },
+    "marketing-slide": {
+      "title": "Leave reviews for all meals",
+      "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae, eirmod assentior eum ne, et omnis antiopam mel.",
+      "reviews": {
+        "title": "Overall rating",
+        "rating": "4.2",
+        "votes": "3 votes",
+        "addReview": "Leave review",
+        "sort": "Sort by:",
+        "first": "Newest first"
+      },
+      "card": {
+        "title": "Roll set",
+        "description": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel. Et cum ignota euismod corpora, et saepe."
+      },
+      "product": {
+        "title": "Nigiri set",
+        "subtitle": "Ea his sensibus eleifend, mollis iudicabit omittantur id mel.",
+        "button": "Add to cart"
+      }
+    }
+  },
+  "order": {
+    "title": "My orders",
+    "button": "My orders",
+    "subtitle": "Order status",
+    "status": "In progres"
+  },
+  "payment": {
+    "title": "Payment method",
+    "subtitle": "Connected payment methods",
+    "newPayment": {
+      "title": "New payment method",
+      "button": "Add new payment method",
+      "cardNumber": {
+        "label": "Card number",
+        "placeholder": "XXXX - XXXX - XXXX - XXXX"
+      },
+      "expiration": {
+        "label": "Expiration",
+        "placeholder": "MM / YYYY"
+      },
+      "cvc": {
+        "label": "CVC",
+        "placeholder": "XXX"
+      },
+      "cardholder": {
+        "label": "Cardholder",
+        "placeholder": "Enter name on card"
+      }
+    }
+  },
+  "paymentSummary": {
+    "title": "Payment summary",
+    "button": "Proceed to checkout",
+    "subtitle": "New payment method",
+    "Coupon": {
+      "label": "Coupon code",
+      "placeholder": "SaaS Design"
+    },
+    "tips": {
+      "label": "Tips",
+      "placeholder": "$ 5"
+    },
+    "info": {
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "tips": "Tips",
+      "discount": "Discount (coupon)",
+      "total": "Total (tax incl.)"
+    }
+  },
+  "product": {
+    "backButton": "Royal Sushi House",
+    "button": "Add to cart",
+    "subTitle": "Recommended with",
+    "productInfo": {
+      "ingredients": "Ingredients",
+      "nutritionalValue": "Nutritional value"
+    }
+  },
+  "restaurants": {
+    "title": "All restaurants",
+    "subtitle": "Found 12 restaurants",
+    "button": "Load More"
+  },
+  "security": {
+    "title": "Security",
+    "authentication": {
+      "title": "2 factor authentication",
+      "phoneNumber": {
+        "label": "Phone number",
+        "placeholder": "(111) 111-1111",
+        "button": "Turn on"
+      }
+    },
+    "changePassword": {
+      "title": "Change password",
+      "current": {
+        "label": "Current password",
+        "placeholder": "Enter current password"
+      },
+      "new": {
+        "label": "New password",
+        "placeholder": "Enter new password"
+      },
+      "confirm": {
+        "label": "Confirm new password",
+        "placeholder": "Confirm new password"
+      },
+      "button": "Change password"
+    }
+  },
+  "sign-up": {
+    "continue": "Continue",
+    "back": "Back",
+    "title": "A few steps to create your restaurant or personal account",
+    "subtitle": "Lorem ipsum dolor sit amet, magna scaevola his ei. Cum te paulo probatus molestiae.",
+
+    "accountStep": {
+      "title": "Sign up",
+      "subtitle": "Register to create your personal account.",
+      "email": {
+        "label": "Email",
+        "placeholder": "name@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "min. 8 characters"
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "min. 8 characters"
+      }
+    },
+    "accountInformationStep": {
+      "title": "Additional info",
+      "subtitle": "Enter your additional information",
+      "checkButton": "Turn on 2 factor authentication",
+      "phone": {
+        "label": "Phone number",
+        "placeholder": "(111) 111-1111"
+      }
+    },
+    "confirmationStep": {
+      "title": "Confirmation",
+      "subtitle": "Enter your security code that we sent to your phone",
+      "checkButton": "Remember this device",
+      "code": {
+        "label": "Confirmation code",
+        "placeholder": "XXX - XXX - XXX"
+      }
+    },
+    "registerLink": {
+      "link": "Sign up",
+      "title": "Register to create your personal account."
+    }
+  }
+}

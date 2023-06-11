@@ -9,9 +9,9 @@ interface IAddressCardItemsProps {
 
 export function AddressCardItems({
   addresses = [],
-  gridCols = 'grid-cols-1',
+  gridCols = 'grid-cols-3',
 }: IAddressCardItemsProps) {
-  const className = clsx('grid gap-y-2 gap-x-4 mb-3', gridCols);
+  const className = clsx('grid gap-y-4 md:gap-y-2 gap-x-4 mb-3', gridCols);
   return (
     <div className={className}>
       {addresses.map((address) => (
