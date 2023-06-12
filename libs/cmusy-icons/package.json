@@ -1,4 +1,10 @@
 {
   "name": "@cmusy/icons",
-  "version": "0.0.1"
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": {
+    "name": "Yaroslav Kulpan",
+    "email": "yaroslav.kulpan.dev@gmail.com",
+    "url": "https://yaroslavkulpan.dev/"
+  }
 }

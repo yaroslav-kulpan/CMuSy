@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.4.1...cmusy-ui-0.5.0) (2023-06-12)
+
+
+### Features
+
+* **CMUSY-11:** Add markup for login and account pages ([1d2091d](https://github.com/yaroslav-kulpan/CMuSy/commit/1d2091dc7f788df4e437c9fb76f9ac613fcfff52))
+* **CMUSY-12:** Add accounts and auth pages; Update stepper component; Create react icons library ([c18416d](https://github.com/yaroslav-kulpan/CMuSy/commit/c18416d102a40cc86aa90b1dbea9943124e375f6))
+* **CMUSY-13:** Add basic dropdown component ([cba0dff](https://github.com/yaroslav-kulpan/CMuSy/commit/cba0dfff60859add514251824ec5df9c361bf8cd))
+
 ### [0.4.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.4.0...cmusy-ui-0.4.1) (2023-06-04)
 
 ## [0.4.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.3.0...cmusy-ui-0.4.0) (2023-06-04)
