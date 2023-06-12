@@ -8,10 +8,4 @@ module.exports = {
     join(__dirname, '{src,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'),
     ...createGlobPatternsForDependencies(__dirname),
   ],
-  // plugins: [
-  //   // require('@tailwindcss/forms')({
-  //   //   strategy: 'class',
-  //   // }),
-  //   // require('@cmusy/plugin'),
-  // ],
 };

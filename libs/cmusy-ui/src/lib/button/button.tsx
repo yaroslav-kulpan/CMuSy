@@ -24,10 +24,17 @@ export const Button = React.forwardRef<
     disabled: isDisabled = false,
     fullWidth,
     autoFocus,
-    ...restProps
+    onPressEnd,
+    onPress,
+    onPressChange,
+    onPressStart,
+    onPressUp,
   } = props;
   const buttonRef = useDomRef(ref);
-  const { buttonProps, isPressed } = useButton(props, buttonRef);
+  const { buttonProps, isPressed } = useButton(
+    { onPressEnd, onPress, onPressChange, onPressStart, onPressUp, ...props },
+    buttonRef
+  );
   const { hoverProps } = useHover({ isDisabled });
   const { focusProps } = useFocusRing({ autoFocus });
 
@@ -46,7 +53,7 @@ export const Button = React.forwardRef<
 
   return (
     <button
-      {...mergeProps(buttonProps, focusProps, hoverProps, restProps)}
+      {...mergeProps(buttonProps, focusProps, hoverProps)}
       ref={buttonRef}
       type={type}
       className={classNames}

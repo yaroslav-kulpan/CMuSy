@@ -5,10 +5,13 @@
   "scripts": {
     "start": "serve",
     "prepare": "husky install",
+    "webapp:dev": "nx serve webapp",
+    "api:dev": "nx serve webapp",
     "icongen": "create-react-icons -s ./apps/webapp/public/icons/**/**/**.svg -d ./libs/cmusy-icons/src/lib --typescript"
   },
   "private": false,
   "dependencies": {
+    "@cmusy/icons": "^0.0.1",
     "@cmusy/plugin": "^0.2.0",
     "@headlessui/react": "^1.7.14",
     "@nestjs/common": "9.4.0",
