@@ -1,26 +1,20 @@
 import React from 'react';
-export interface ITabPanelProps {
-  title: string;
-  id?: string;
-  index: number;
+import { useTabPanel } from 'react-aria';
+import { TabListState } from 'react-stately';
+
+interface TabPanelProps<T> {
+  state: TabListState<T>;
 }
 
-export const TabPanel = React.forwardRef<
-  HTMLDivElement,
-  React.PropsWithChildren<ITabPanelProps>
->(function TabPanel({ children, index }, ref) {
+export function TabPanel<T extends object>({
+  state,
+  ...props
+}: TabPanelProps<T>) {
+  const ref = React.useRef(null);
+  const { tabPanelProps } = useTabPanel(props, state, ref);
   return (
-    <div
-      ref={ref}
-      id={`panel-${index}`}
-      role="tabpanel"
-      tabIndex={0}
-      aria-labelledby={`panel-${index}`}
-    >
-      {children}
+    <div {...tabPanelProps} ref={ref}>
+      {state.selectedItem?.props.children}
     </div>
   );
-});
-
-TabPanel.displayName = 'CMuSyUI.TabPanel';
-export default React.memo(TabPanel);
+}

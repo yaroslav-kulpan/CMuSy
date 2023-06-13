@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { Tabs } from './tabs';
-import { TabPanel } from './tab-panel';
+import { TabItem } from './index';
 
 export default {
   component: Tabs,
@@ -10,12 +11,15 @@ export default {
 type Story = StoryObj<typeof Tabs>;
 
 export const Default = () => (
-  <Tabs defaultTab={1}>
-    <TabPanel title="First" index={0}>
+  <Tabs disabledKeys={['2']}>
+    <TabItem title="First" key="1">
       First
-    </TabPanel>
-    <TabPanel title="Second" index={1}>
+    </TabItem>
+    <TabItem title="Second" key="2">
       Second
-    </TabPanel>
+    </TabItem>
+    <TabItem title="Third" key="3">
+      Second
+    </TabItem>
   </Tabs>
 );
