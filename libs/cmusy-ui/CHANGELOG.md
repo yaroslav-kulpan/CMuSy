@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.5.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.5.0...cmusy-ui-0.5.1) (2023-06-13)
+
+
+### Features
+
+* **CMUSY-4:** Switch toggle component ([9d90a23](https://github.com/yaroslav-kulpan/CMuSy/commit/9d90a2353c194a2fbb92f2ce6d2ad774d6ddf0f7))
+
 ## [0.5.0](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.4.1...cmusy-ui-0.5.0) (2023-06-12)
 
 

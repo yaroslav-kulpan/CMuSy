@@ -2,11 +2,11 @@ import React, { forwardRef } from 'react';
 import { AriaMenuProps, MenuTriggerProps } from '@react-types/menu';
 import { useMenuTriggerState } from 'react-stately';
 import { mergeProps, useMenuTrigger } from 'react-aria';
-import { IconChevronDown } from '@cmusy/icons/src/lib/icons/IconChevronDown';
+import { IconChevronDown } from '@cmusy/icons';
 
 import { DropdownButton } from './dropdown-button';
 import { Popover } from '../popover';
-import { useDomRef } from '../use-dom-ref/use-dom-ref';
+import { useDomRef } from '../use-dom-ref';
 import { Menu } from './dropdown-menu';
 import Typography from '../typography';
 import { chevronIcon, DropdownVariants } from './dropdown.theme';

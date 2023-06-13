@@ -1,69 +1,39 @@
 import React from 'react';
-import clsx from 'clsx';
+import { AriaTabListProps, useTabList } from 'react-aria';
+import { useTabListState } from 'react-stately';
 
-import { ITabPanelProps } from './tab-panel';
+import { TabPanel } from './tab-panel';
+import { Tab } from './tab';
 import { tabs } from './tabs.theme';
-import Typography from '../typography';
 
-interface ITabsProps {
-  defaultTab?: number;
-  onHandleChangeTab?: (idx: number) => void;
+interface ITabsProps<T> extends AriaTabListProps<T> {
   ariaLabel?: string;
   fullWidth?: boolean;
-  disabled?: boolean;
 }
 
-export function Tabs({
-  defaultTab,
-  onHandleChangeTab,
-  ariaLabel = 'Sample Tabs',
-  fullWidth = false,
-  children,
-}: React.PropsWithChildren<ITabsProps>) {
-  const [activeIdx, setActiveIdx] = React.useState(() => defaultTab || 0);
-  const { root, tab } = tabs({ fullWidth });
-  const handleChangeTab = (idx: number) => {
-    setActiveIdx(idx);
-
-    if (onHandleChangeTab) {
-      onHandleChangeTab(idx);
-    }
-  };
+export function Tabs<T extends object>(
+  props: React.PropsWithChildren<ITabsProps<T>>
+) {
+  const {fullWidth = false} = props;
+  const state = useTabListState(props);
+  const ref = React.useRef(null);
+  const { tabListProps } = useTabList(props, state, ref);
+  const { root } = tabs({ fullWidth });
 
   return (
-    <div className="tabs">
-      <div
-        role="tablist"
-        className={root()}
-        aria-label={ariaLabel}
-        aria-orientation="horizontal"
-      >
-        {React.Children.map(children, (child, idx) => {
-          const item = child as React.ReactElement<
-            React.PropsWithChildren<ITabPanelProps>
-          >;
-
-          const isSelected = item.props.index === activeIdx;
-
-          return (
-            <button
-              role="tab"
-              aria-selected={isSelected}
-              aria-controls={`panel-${idx}`}
-              className={tab({
-                class: clsx({ 'bg-neutral-black text-white': isSelected }),
-              })}
-              onClick={() => handleChangeTab(idx)}
-              id={`tab-${idx}`}
-              tabIndex={0}
-            >
-              <Typography variant="subtitle-1">{item.props.title}</Typography>
-            </button>
-          );
-        })}
+    <div className={`tabs ${props.orientation || ''}`}>
+      <div {...tabListProps} ref={ref} className={root()}>
+        {[...state.collection].map((item) => (
+          <Tab
+            key={item.key}
+            item={item}
+            state={state}
+            orientation={props.orientation}
+            fullWidth={fullWidth}
+          />
+        ))}
       </div>
-
-      {React.Children.toArray(children)[activeIdx]}
+      <TabPanel key={state.selectedItem?.key} state={state} />
     </div>
   );
 }
