@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.5.2](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.5.1...cmusy-ui-0.5.2) (2023-06-14)
+
+
+### Features
+
+* **CMUSY-15:** Update supported colors for UI components ([12f484b](https://github.com/yaroslav-kulpan/CMuSy/commit/12f484b147fada03600ac4840524e2003d469c55))
+* **CMUSY-4:** Fix icon import in dropdown ([0ea106d](https://github.com/yaroslav-kulpan/CMuSy/commit/0ea106de9826f921d48651b5f11420f6f38f4783))
+
 ### [0.5.1](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.5.0...cmusy-ui-0.5.1) (2023-06-13)
 
 

@@ -1,8 +1,11 @@
-import {tv, VariantProps} from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
 
 export const avatar = tv({
   base: 'flex justify-center items-center h-11 w-11',
   variants: {
+    src: {
+      true: '',
+    },
     round: {
       square: '',
       rounded: 'rounded-2xl',
@@ -17,6 +20,16 @@ export const avatar = tv({
       tertiary: 'bg-tertiary text-white',
     },
   },
+  compoundVariants: [
+    {
+      src: true,
+      class: 'bg-transparent text-transparent',
+    },
+  ],
+  defaultVariants: {
+    color: "primary",
+    round: "circle"
+  }
 });
 
 export type AvatarVariants = VariantProps<typeof avatar>;

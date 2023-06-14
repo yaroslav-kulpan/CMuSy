@@ -15,11 +15,13 @@ const button = tv({
       secondary: '',
       light: '',
       danger: '',
+      success: '',
+      tertiary: '',
     },
     size: {
-      xs: 'py-1.5 px-3 text-button-1 font-bold leading-20 tracking-0.4 font-nunito',
-      sm: 'py-3 px-4 text-sm font-bold leading-20 tracking-0.4 font-nunito',
-      lg: 'py-4 px-8 text-lg font-bold leading-20 tracking-0.4 font-nunito',
+      xs: 'py-1.5 px-3 text-button-1 font-bold leading-20 tracking-0.4 font-sans',
+      sm: 'py-3 px-4 text-sm font-bold leading-20 tracking-0.4 font-sans',
+      lg: 'py-4 px-8 text-lg font-bold leading-20 tracking-0.4 font-sans',
     },
     fullWidth: {
       true: 'w-full',
@@ -52,6 +54,18 @@ const button = tv({
     },
     {
       variant: 'text',
+      color: 'success',
+      class:
+        'text-success hover:bg-success-light focus:bg-success-light focus:ring-2 focus:ring-success active:ring-success',
+    },
+    {
+      variant: 'text',
+      color: 'tertiary',
+      class:
+        'text-tertiary hover:bg-tertiary-light focus:bg-tertiary-light focus:ring-2 focus:ring-tertiary active:ring-tertiary',
+    },
+    {
+      variant: 'text',
       disabled: true,
       class: 'text-neutral-gray-lightest',
     },
@@ -76,9 +90,20 @@ const button = tv({
     },
     {
       variant: 'contained',
-      disabled: true,
+      color: 'success',
       class:
-        'bg-neutral-background text-neutral-gray-light shadow-none',
+        'bg-success hover:bg-success-hover focus:bg-success-dark focus:ring-2 focus:ring-success-hover active:ring-success-dark',
+    },
+    {
+      variant: 'contained',
+      color: 'tertiary',
+      class:
+        'bg-tertiary hover:bg-tertiary-hover focus:bg-tertiary-dark focus:ring-2 focus:ring-tertiary-hover active:ring-tertiary-dark',
+    },
+    {
+      variant: 'contained',
+      disabled: true,
+      class: 'bg-neutral-background text-neutral-gray-light shadow-none',
     },
     // Outlined
     {
@@ -99,11 +124,29 @@ const button = tv({
       class:
         'border-error text-error hover:bg-error hover:text-white focus:ring-2 focus:bg-error-dark focus:ring-error',
     },
+    {
+      variant: 'outlined',
+      color: 'success',
+      class:
+        'border-success text-success hover:bg-success hover:text-white focus:ring-2 focus:bg-success-dark focus:ring-success active:ring-success',
+    },
+    {
+      variant: 'outlined',
+      color: 'tertiary',
+      class:
+        'border-tertiary text-tertiary hover:bg-tertiary hover:text-white focus:ring-2 focus:bg-tertiary-dark focus:ring-tertiary active:ring-tertiary',
+    },
     // Outlined disabled
     {
       variant: 'outlined',
       disabled: true,
       class: 'text-neutral-gray-light border-neutral-gray-light',
+    },
+    // Small
+    {
+      variant: 'small',
+      class:
+        'py-1.5 px-3 text-button-1 font-bold leading-20 tracking-0.4 font-nunito',
     },
     {
       variant: 'small',
@@ -125,8 +168,15 @@ const button = tv({
     },
     {
       variant: 'small',
+      color: 'success',
       class:
-        'py-1.5 px-3 text-button-1 font-bold leading-20 tracking-0.4 font-nunito',
+        'border-success text-success hover:border-success-hover hover:text-success-hover focus:bg-success-light focus:text-success focus:ring-success active:ring-success active:text-success',
+    },
+    {
+      variant: 'small',
+      color: 'tertiary',
+      class:
+        'border-tertiary text-tertiary hover:border-tertiary-hover hover:text-tertiary-hover focus:bg-tertiary-light focus:text-tertiary focus:ring-tertiary active:ring-tertiary active:text-tertiary',
     },
     {
       variant: 'small',

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Typography from '../typography';
 import { avatar, AvatarVariants } from './avatar.theme';
+import PropTypes from 'prop-types';
 
 export type AvatarProps = React.ComponentPropsWithoutRef<'div'> &
   AvatarVariants & {
@@ -23,7 +24,11 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     ref
   ) => {
     return (
-      <div ref={ref} className={avatar({ round, color, className })} {...props}>
+      <div
+        ref={ref}
+        className={avatar({ round, color, className, src })}
+        {...props}
+      >
         {src ? (
           <img src={src} className={'object-contain'} alt={alt} />
         ) : (
@@ -35,5 +40,18 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     );
   }
 );
+
+Avatar.propTypes = {
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'danger',
+    'success',
+    'tertiary',
+  ]),
+  round: PropTypes.oneOf(['square', 'circle', 'rounded']),
+};
+
+Avatar.displayName = 'CMuSyUI.Avatar';
 
 export default React.memo(Avatar);

@@ -55,7 +55,7 @@ export const Dialog: Story = {
           <Button variant="outlined" color="secondary">
             Cancel
           </Button>
-          <Button variant="outlined" color="primary" autoFocus>
+          <Button variant="contained" color="primary" autoFocus>
             Save
           </Button>
         </ModalActions>

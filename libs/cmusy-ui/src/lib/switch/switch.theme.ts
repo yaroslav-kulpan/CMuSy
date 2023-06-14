@@ -1,4 +1,4 @@
-import { tv } from 'tailwind-variants';
+import { tv, VariantProps } from 'tailwind-variants';
 
 export const switchStyles = tv({
   base: 'flex items-center gap-x-2',
@@ -11,6 +11,15 @@ export const switchStyles = tv({
   variants: {
     color: {
       primary: {
+        input: 'bg-neutral-gray hover:bg-neutral-gray-light',
+      },
+      danger: {
+        input: 'bg-neutral-gray hover:bg-neutral-gray-light',
+      },
+      success: {
+        input: 'bg-neutral-gray hover:bg-neutral-gray-light',
+      },
+      tertiary: {
         input: 'bg-neutral-gray hover:bg-neutral-gray-light',
       },
     },
@@ -32,12 +41,8 @@ export const switchStyles = tv({
       class: 'bg-primary hover:bg-primary-hover',
     },
     {
-      slots: ['circle'],
-      isSelected: true,
-      class: 'translate-x-5',
-    },
-    {
       slots: ['input'],
+      color: 'primary',
       isFocusVisible: true,
       class: 'bg-primary-30',
     },
@@ -45,6 +50,69 @@ export const switchStyles = tv({
       slots: ['circle'],
       isFocusVisible: true,
       class: 'bg-primary-hover',
+    },
+    // Danger
+    {
+      slots: ['input'],
+      color: 'danger',
+      isSelected: true,
+      class: 'bg-error hover:bg-error-hover',
+    },
+    {
+      slots: ['input'],
+      color: 'danger',
+      isFocusVisible: true,
+      class: 'bg-error-light',
+    },
+    {
+      slots: ['circle'],
+      color: 'danger',
+      isFocusVisible: true,
+      class: 'bg-error-hover',
+    },
+    //  Success
+    {
+      slots: ['input'],
+      color: 'success',
+      isSelected: true,
+      class: 'bg-success hover:bg-success-hover',
+    },
+    {
+      slots: ['input'],
+      color: 'success',
+      isFocusVisible: true,
+      class: 'bg-success-light hover:bg-success-light',
+    },
+    {
+      slots: ['circle'],
+      color: 'success',
+      isFocusVisible: true,
+      class: 'bg-success-hover',
+    },
+    //  Tertiary
+    {
+      slots: ['input'],
+      color: 'tertiary',
+      isSelected: true,
+      class: 'bg-tertiary hover:bg-tertiary-hover',
+    },
+    {
+      slots: ['input'],
+      color: 'tertiary',
+      isFocusVisible: true,
+      class: 'bg-tertiary-lightest hover:bg-tertiary-light',
+    },
+    {
+      slots: ['circle'],
+      color: 'tertiary',
+      isFocusVisible: true,
+      class: 'bg-tertiary-hover',
+    },
+    // Disabled
+    {
+      slots: ['circle'],
+      isSelected: true,
+      class: 'translate-x-5',
     },
     {
       slots: ['input'],
@@ -63,3 +131,5 @@ export const switchStyles = tv({
     isDisabled: false,
   },
 });
+
+export type SwitchVariants = VariantProps<typeof switchStyles>;

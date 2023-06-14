@@ -46,6 +46,9 @@ export const starStyles = tv({
   variants: {
     color: {
       primary: 'text-primary fill-primary cover-fill',
+      danger: 'text-error fill-error cover-fill',
+      success: 'text-success fill-success cover-fill',
+      tertiary: 'text-tertiary fill-tertiary cover-fill',
     },
     showEmptyIcon: {
       true: '',

@@ -8,7 +8,7 @@ import {
 import PropTypes from 'prop-types';
 
 import { HelperText } from '../helper-text';
-import { useDomRef } from '../use-dom-ref/use-dom-ref';
+import { useDomRef } from '../use-dom-ref';
 import { textField } from './text-field.theme';
 import { IconClearable } from './icon-clearable';
 import { __DEV__ } from '../utils/assert';
@@ -22,7 +22,7 @@ export type ITextFieldProps = Omit<
 > &
   React.ComponentPropsWithoutRef<'input'> & {
     variant?: Variant;
-    color?: 'primary';
+    color?: 'primary' | 'tertiary' | 'success' | 'danger';
     label?: string | null;
     helperText?: string | null;
     startAdornment?: React.ReactNode;
@@ -34,8 +34,10 @@ export type ITextFieldProps = Omit<
     clearable?: boolean;
   };
 
-// TODO: Fix types
-const patchOnChange = (event: any, refEl: any) => {
+const patchEvent = (
+  event: React.MouseEvent<HTMLButtonElement>,
+  refEl: HTMLInputElement
+) => {
   return {
     ...event,
     target: refEl,
@@ -110,12 +112,12 @@ export const TextField = React.forwardRef<HTMLInputElement, ITextFieldProps>(
         return;
       }
 
-      const patchedOnChange = patchOnChange(event, inputRef.current);
+      const patchedEvent = patchEvent(event, inputRef.current);
 
-      patchedOnChange.target.value = '';
+      patchedEvent.target.value = '';
 
       if (props.onChange) {
-        props.onChange(patchedOnChange);
+        props.onChange(patchedEvent);
       }
 
       inputRef.current.focus();

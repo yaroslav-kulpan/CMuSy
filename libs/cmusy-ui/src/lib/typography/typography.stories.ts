@@ -4,6 +4,13 @@ import Typography from './typography';
 export default {
   component: Typography,
   title: 'UI/Typography',
+  argTypes: {
+    color: {
+      options: ['primary', 'secondary', 'danger', 'success', 'tertiary'],
+      control: { type: 'select' },
+      defaultValue: "primary"
+    },
+  },
 } as Meta<typeof Typography>;
 
 type Story = StoryObj<typeof Typography>;

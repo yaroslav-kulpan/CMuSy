@@ -27,6 +27,8 @@ export const typography = tv({
       primary: 'text-primary',
       secondary: 'text-secondary',
       danger: 'text-error',
+      success: 'text-success',
+      tertiary: 'text-tertiary',
     },
   },
   defaultVariants: {

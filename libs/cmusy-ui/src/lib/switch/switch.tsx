@@ -7,12 +7,12 @@ import {
   AriaSwitchProps,
 } from 'react-aria';
 import Typography from '../typography';
-import { switchStyles } from './switch.theme';
+import { switchStyles, SwitchVariants } from './switch.theme';
 
-type SwitchProps = AriaSwitchProps;
+type SwitchProps = AriaSwitchProps & SwitchVariants;
 
 export function Switch(props: SwitchProps) {
-  const { isDisabled } = props;
+  const { isDisabled, color } = props;
   const state = useToggleState(props);
   const ref = React.useRef(null);
   const { inputProps } = useSwitch(props, state, ref);
@@ -22,6 +22,7 @@ export function Switch(props: SwitchProps) {
     isSelected: state.isSelected,
     isFocusVisible,
     isDisabled,
+    color,
   });
 
   return (

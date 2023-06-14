@@ -14,7 +14,6 @@ export const DropdownTrigger = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const { buttonProps } = useButton(props, buttonRef);
     const { focusProps } = useFocusRing();
 
-    console.log(mergeProps(buttonProps, focusProps, { ref: buttonRef }))
 
     return React.cloneElement(
       props.children as any,
