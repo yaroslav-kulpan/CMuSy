@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import {Avatar, Badge, Button, Container, TextField, Typography} from '@cmusy/ui';
+import {Avatar, Badge, Button, Container, Dropdown, DropdownItem, TextField, Typography} from '@cmusy/ui';
 import { IconSearch, IconShopShoppingBag } from '@cmusy/icons';
 
-import { NavbarTop } from '../navbar-top/navbar-top';
+import { NavbarTop } from '../navbar-top';
 
 const Navbar = () => {
   const { push } = useRouter();
@@ -47,6 +47,11 @@ const Navbar = () => {
                     {t('navigation.links.deals')}
                   </Typography>
                 </Link>
+                <Dropdown label="Components" variant="textual">
+                  <DropdownItem>Typography</DropdownItem>
+                  <DropdownItem>Colors</DropdownItem>
+                  <DropdownItem>Textfields</DropdownItem>
+                </Dropdown>
                 {isAuthenticated ? (
                   <Link href="/account/orders">
                     <Typography as="span" variant="nav-link" className="mr-2">

@@ -5,6 +5,12 @@ import PasswordField from './password-field';
 export default {
   component: PasswordField,
   title: 'Forms/PasswordField',
+  argTypes: {
+    color: {
+      options: ['primary', 'secondary', 'danger', 'success', 'tertiary'],
+      control: { type: 'select' },
+    },
+  },
 } as Meta<typeof PasswordField>;
 
 type Story = StoryObj<typeof PasswordField>;

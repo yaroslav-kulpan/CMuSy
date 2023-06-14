@@ -13,8 +13,8 @@ export const badge = tv({
     },
     size: {
       xs: 'py-1.5 px-3 !text-small-2 font-semibold leading-16 tracking-0',
-      sm: 'py-1.5 px-3',
-      lg: 'py-1.5 px-3',
+      sm: 'py-1.5 px-3 !text-small-2 font-semibold leading-16 tracking-0',
+      lg: 'py-1.5 px-3 !text-small-2 font-semibold leading-16 tracking-0',
     },
     color: {
       primary: '',

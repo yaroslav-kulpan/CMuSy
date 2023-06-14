@@ -5,6 +5,16 @@ const meta: Meta<typeof Button> = {
   title: 'UI/Button',
   component: Button,
   tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      options: ['text', 'contained', 'outlined', 'small'],
+      control: { type: 'select' },
+    },
+    color: {
+      options: ['primary', 'secondary', 'danger', 'success', 'tertiary'],
+      control: { type: 'select' },
+    },
+  },
 };
 
 export default meta;

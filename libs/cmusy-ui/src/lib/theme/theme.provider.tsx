@@ -5,14 +5,15 @@ import ThemeContext, { defaultContext } from './theme.context';
 
 export type ThemeProviderProps = {
   theme?: any;
+  locale?: string;
 };
 
 export const ThemeProvider: React.FC<
   React.PropsWithChildren<ThemeProviderProps>
-> = ({ children }) => {
+> = ({ children, locale }) => {
   return (
     <SSRProvider>
-      <I18nProvider>
+      <I18nProvider locale={locale}>
         <ThemeContext.Provider value={defaultContext}>
           {children}
         </ThemeContext.Provider>

@@ -70,4 +70,5 @@ export const PasswordField = React.forwardRef<
   );
 });
 
+PasswordField.displayName = 'CMuSyUI.PasswordField';
 export default React.memo(PasswordField);

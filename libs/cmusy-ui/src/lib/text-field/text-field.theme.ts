@@ -29,6 +29,21 @@ export const textField = tv({
           'ring-1.5 ring-inset ring-neutral-gray-light focus:ring-1.5 focus:ring-inset focus:ring-primary',
         label: 'group-focus-within:text-primary',
       },
+      danger: {
+        input:
+          'ring-1.5 ring-inset ring-neutral-gray-light focus:ring-1.5 focus:ring-inset focus:ring-error',
+        label: 'group-focus-within:text-error',
+      },
+      success: {
+        input:
+          'ring-1.5 ring-inset ring-neutral-gray-light focus:ring-1.5 focus:ring-inset focus:ring-success',
+        label: 'group-focus-within:text-success',
+      },
+      tertiary: {
+        input:
+          'ring-1.5 ring-inset ring-neutral-gray-light focus:ring-1.5 focus:ring-inset focus:ring-tertiary',
+        label: 'group-focus-within:text-tertiary',
+      },
     },
     // States
     disabled: {
@@ -121,7 +136,7 @@ export const textField = tv({
       endAdornment: true,
       clearable: true,
       class: 'pr-16',
-    },   //   Start
+    }, //   Start
   ],
   defaultVariants: {
     variant: 'outlined',

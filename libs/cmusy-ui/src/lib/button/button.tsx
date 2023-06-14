@@ -2,14 +2,14 @@ import React, { useMemo } from 'react';
 import { AriaButtonProps, useFocusRing, useHover } from 'react-aria';
 import { mergeProps } from 'react-aria';
 import { useButton } from '@react-aria/button';
+import PropTypes from 'prop-types';
 
 import button, { ButtonVariants } from './button.theme';
-import { __DEV__ } from '../utils/assert';
-import { useDomRef } from '../use-dom-ref/use-dom-ref';
+import { useDomRef } from '../use-dom-ref';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> &
   AriaButtonProps &
-  Omit<ButtonVariants, 'isPressed'>;
+  Omit<ButtonVariants, 'isPressed'| 'isDisabled'>;
 
 export const Button = React.forwardRef<
   HTMLButtonElement,
@@ -64,7 +64,16 @@ export const Button = React.forwardRef<
   );
 });
 
-if (__DEV__) {
-  Button.displayName = 'CMuSyUI.Button';
-}
+Button.propTypes = {
+  color: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'danger',
+    'success',
+    'tertiary',
+  ]),
+};
+
+Button.displayName = 'CMuSyUI.Button';
+
 export default React.memo(Button);

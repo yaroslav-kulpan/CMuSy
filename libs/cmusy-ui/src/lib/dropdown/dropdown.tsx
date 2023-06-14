@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import { AriaMenuProps, MenuTriggerProps } from '@react-types/menu';
 import { useMenuTriggerState } from 'react-stately';
 import { mergeProps, useMenuTrigger } from 'react-aria';
-import { IconChevronDown } from '@cmusy/icons';
+// import { IconChevronDown } from '@cmusy/icons';
 
 import { DropdownButton } from './dropdown-button';
 import { Popover } from '../popover';
@@ -42,7 +42,7 @@ export const Dropdown = forwardRef(
           ref={dropdownRef}
         >
           <Typography variant="subtitle-2">{props.label}</Typography>
-          <IconChevronDown className={chevronIcon({ isOpen: state.isOpen })} />
+          {/*<IconChevronDown className={chevronIcon({ isOpen: state.isOpen })} />*/}
         </DropdownButton>
 
         {state.isOpen && (

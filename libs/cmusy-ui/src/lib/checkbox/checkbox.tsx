@@ -9,7 +9,14 @@ type CheckboxProps = Omit<ComponentPropsWithoutRef<'input'>, 'type'> &
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   function Checkbox(
-    { label, className, color = 'primary', classNameWrapper, ...props },
+    {
+      label,
+      className,
+      color = 'primary',
+      classNameWrapper,
+      disabled,
+      ...props
+    },
     ref
   ) {
     const {
@@ -17,7 +24,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
       input,
       inputWrapper,
       label: labelStyles,
-    } = checkbox({ color });
+    } = checkbox({ color, isDisabled: disabled });
 
     const id = useId();
     return (

@@ -14,5 +14,12 @@ export const Default: Story = {
   args: {
     checked: true,
     disabled: false,
+    color: 'primary',
+  },
+  argTypes: {
+    color: {
+      options: ['primary', 'secondary', 'danger', 'success', 'tertiary'],
+      control: { type: 'select' },
+    },
   },
 };

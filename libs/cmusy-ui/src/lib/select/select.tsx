@@ -14,7 +14,7 @@ import { ListBox } from './option';
 import Typography from '../typography';
 import { select } from './select.theme';
 import { BaseFormFieldProps } from '../types/base-forms.types';
-import { useDomRef } from '../use-dom-ref/use-dom-ref';
+import { useDomRef } from '../use-dom-ref';
 import { IconSelect } from './icon-select';
 import { HelperText } from '../helper-text';
 
@@ -38,7 +38,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps<any>>(
     const state = useSelectState({
       isRequired,
       isDisabled,
-      defaultSelectedKey: props.value as string,
+      defaultSelectedKey: String(props.value),
       ...props,
     });
     const selectRef = useDomRef<HTMLSelectElement>(ref);
@@ -102,7 +102,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps<any>>(
             state={state}
             triggerRef={selectRef}
             placement="bottom start"
-            className="w-52"
+            className="bg-white shadow-dropdown rounded-lg w-52"
           >
             <ListBox {...menuProps} state={state} />
           </Popover>
