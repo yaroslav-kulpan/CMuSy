@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Typography from '../typography';
 import { avatar, AvatarVariants } from './avatar.theme';
-import PropTypes from 'prop-types';
 
 export type AvatarProps = React.ComponentPropsWithoutRef<'div'> &
   AvatarVariants & {

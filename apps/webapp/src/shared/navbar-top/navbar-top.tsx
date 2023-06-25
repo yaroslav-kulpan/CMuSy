@@ -33,14 +33,14 @@ export function NavbarTop() {
             <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
               <Link
                 href="/signup"
-                className="text-sm font-medium text-white hover:text-gray-100"
+                className="text-sm font-medium text-white hover:text-primary-hover"
               >
                 Create an account
               </Link>
               <span className="h-6 w-px bg-gray-600" aria-hidden="true"></span>
               <Link
                 href="/signin"
-                className="text-sm font-medium text-white hover:text-gray-100"
+                className="text-sm font-medium text-white hover:text-primary-hover"
               >
                 Sign in
               </Link>

@@ -17,7 +17,7 @@ type TypographyProps<C extends React.ElementType> =
     }
   >;
 
-type TextComponent = <C extends React.ElementType = 'span' | 'label'>(
+type TextComponent = <C extends React.ElementType = 'span' | 'label' | "a">(
   props: TypographyProps<C>
 ) => React.ReactElement | null;
 

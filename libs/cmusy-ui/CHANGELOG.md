@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.5.3](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.5.2...cmusy-ui-0.5.3) (2023-06-25)
+
+
+### Features
+
+* **CMUSY-16:** Add range slider for ui and update webapp application ([d12be0e](https://github.com/yaroslav-kulpan/CMuSy/commit/d12be0ee425c32a4c62bfb1976f72855e0a90f9a))
+
 ### [0.5.2](https://github.com/yaroslav-kulpan/CMuSy/compare/cmusy-ui-0.5.1...cmusy-ui-0.5.2) (2023-06-14)
 
 

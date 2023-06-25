@@ -1,28 +1,28 @@
-import { memo, ReactNode } from 'react';
+import * as React from 'react';
 
 import { cardTitle, CardTitleVariants } from './card.theme';
 
-export type CardTitleProps = CardTitleVariants & {
-  title: string;
-  children?: ReactNode;
-  icon?: ReactNode;
+export type CardTitleProps = Omit<CardTitleVariants, "children"> & {
+  title?: string;
+  icon?: React.ReactNode;
   wrapperClassName?: string;
 };
 
-export function CardTitle({
-  title,
-  children,
-  icon = null,
-  wrapperClassName = '',
-}: CardTitleProps) {
+export const CardTitle = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<CardTitleProps>
+>(function CardTitle(
+  { title = null, children = null, icon = null, wrapperClassName = '' },
+  ref
+) {
   const {
     cardTitle: cardTitleStyles,
     cardIcon,
     cardContainer,
-  } = cardTitle({ children });
+  } = cardTitle({ children: !!children });
 
   return (
-    <div className={wrapperClassName}>
+    <div className={wrapperClassName} ref={ref}>
       <div className={cardContainer()}>
         <h4 className={cardTitleStyles()}>{title}</h4>
         <div className={cardIcon()}>{icon}</div>
@@ -30,6 +30,6 @@ export function CardTitle({
       {children}
     </div>
   );
-}
+});
 
-export default memo(CardTitle);
+export default React.memo(CardTitle);

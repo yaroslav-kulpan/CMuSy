@@ -3,7 +3,6 @@ import { Nunito } from 'next/font/google';
 import './global.css';
 import { Providers } from './providers';
 import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -31,7 +30,7 @@ export default async function RootLayout({
   try {
     messages = (await import(`../../locales/${locale}.json`)).default;
   } catch (error) {
-    console.log(error)
+    console.log(error);
     // notFound();
   }
 
