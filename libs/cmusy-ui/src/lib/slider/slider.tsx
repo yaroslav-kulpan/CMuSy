@@ -5,8 +5,6 @@ import { useSliderState } from 'react-stately';
 import Thumb from './thumb';
 import Typography from '../typography';
 import { slider, SliderVariants } from './slider.theme';
-import {Tooltip} from "../tooltip";
-import {TooltipButton} from "../tooltip/tooltip-trigger";
 
 type SliderProps = AriaSliderProps &
   SliderVariants & {
@@ -14,7 +12,7 @@ type SliderProps = AriaSliderProps &
     multiThumbs?: boolean;
   };
 function Slider(props: SliderProps) {
-  const { isDisabled, color, multiThumbs = false } = props;
+  const { isDisabled, color} = props;
   const trackRef = React.useRef(null);
   const numberFormatter = useNumberFormatter(props.formatOptions);
   const state = useSliderState({ ...props, numberFormatter });

@@ -10,7 +10,6 @@ import {
 import { SliderState } from 'react-stately';
 
 import { thumb } from './slider.theme';
-import { TooltipButton } from '../tooltip/tooltip-trigger';
 
 type ThumbProps = AriaSliderThumbProps & {
   trackRef: RefObject<HTMLElement>;
@@ -39,17 +38,15 @@ const Thumb = (props: ThumbProps) => {
   });
 
   return (
-      <div
-        className={classes}
-        role="presentation"
-        {...mergeProps(thumbProps, hoverProps)}
-      >
-        <TooltipButton tooltip="Tooltip" delay={0}>
-        <VisuallyHidden>
-          <input ref={inputRef} {...mergeProps(inputProps, focusProps)} />
-        </VisuallyHidden>
-        </TooltipButton>
-      </div>
+    <div
+      className={classes}
+      role="presentation"
+      {...mergeProps(thumbProps, hoverProps)}
+    >
+      <VisuallyHidden>
+        <input ref={inputRef} {...mergeProps(inputProps, focusProps)} />
+      </VisuallyHidden>
+    </div>
   );
 };
 
