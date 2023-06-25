@@ -1,3 +1,4 @@
+"use client";
 import clsx from 'clsx';
 import {IAccountAddresses} from "./addresses";
 import AddressCardItem from "./address-card-item";

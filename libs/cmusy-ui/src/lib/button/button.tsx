@@ -1,7 +1,11 @@
 import React, { useMemo } from 'react';
-import { AriaButtonProps, useFocusRing, useHover } from 'react-aria';
-import { mergeProps } from 'react-aria';
-import { useButton } from '@react-aria/button';
+import {
+  AriaButtonProps,
+  useFocusRing,
+  useHover,
+  mergeProps,
+  useButton,
+} from 'react-aria';
 import PropTypes from 'prop-types';
 
 import button, { ButtonVariants } from './button.theme';
@@ -9,7 +13,7 @@ import { useDomRef } from '../use-dom-ref';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> &
   AriaButtonProps &
-  Omit<ButtonVariants, 'isPressed'| 'isDisabled'>;
+  Omit<ButtonVariants, 'isPressed' | 'isDisabled'>;
 
 export const Button = React.forwardRef<
   HTMLButtonElement,
