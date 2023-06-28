@@ -1,18 +1,8 @@
-import { Module } from "@nestjs/common";
-import {ConfigModule} from "@nestjs/config";
+import { Module } from '@nestjs/common';
 
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import load from "./config/load";
+import { ConfigurationModule } from './config/configure.module';
 
-  @Module({
-  imports: [ConfigModule.forRoot({
-    isGlobal: true,
-    cache: process.env.NODE_ENV === "production",
-    load: [load]
-  })
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+@Module({
+  imports: [ConfigurationModule],
 })
 export class AppModule {}

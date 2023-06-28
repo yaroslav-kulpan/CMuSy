@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15.0-alpine3.16
+    restart: unless-stopped
+    container_name: postgres_container
+    command:
+      - "postgres"
+      - "-c"
+      - "max_connections=50"
+      - "-c"
+      - "shared_buffers=1GB"
+      - "-c"
+      - "effective_cache_size=4GB"
+      - "-c"
+      - "work_mem=16MB"
+      - "-c"
+      - "maintenance_work_mem=512MB"
+      - "-c"
+      - "random_page_cost=1.1"
+      - "-c"
+      - "temp_file_limit=10GB"
+      - "-c"
+      - "log_min_duration_statement=200ms"
+      - "-c"
+      - "idle_in_transaction_session_timeout=10s"
+      - "-c"
+      - "lock_timeout=1s"
+      - "-c"
+      - "statement_timeout=60s"
+      - "-c"
+      - "shared_preload_libraries=pg_stat_statements"
+      - "-c"
+      - "pg_stat_statements.max=10000"
+      - "-c"
+      - "pg_stat_statements.track=all"
+    volumes:
+      - ./volumes/db/pgdata:/var/lib/postgresql/data
+      - ./volumes/db/pgconf:/etc/postgresql
+      - ./volumes/db/pglog:/var/log/postgresql
+    environment:
+      POSTGRES_DB: "cmusy"
+      POSTGRES_USER: "yaroslav"
+      POSTGRES_PASSWORD: "Zhjckfd1945#"
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4:6.4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "wow199strap@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "Zhjckfd1945#"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_LISTEN_PORT: 5050
+    volumes:
+      - ./volumes/db/pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:5050"
+    restart: unless-stopped
+    depends_on:
+      - db
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 1G
+    networks:
+      - app-network
+
+  redis:
+    image: redis
+    container_name: redis
+    hostname: redis
+    restart: unless-stopped
+    env_file:
+      - ./apps/api/src/assets/.env.development
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  redis-commander:
+    container_name: redis-commander
+    hostname: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: unless-stopped
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
