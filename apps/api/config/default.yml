@@ -1,0 +1,35 @@
+server:
+  prefix: "api"
+  host: "0.0.0.0"
+  port: 3333
+  origin: 'http://localhost:3333'
+
+db:
+  host: 'localhost'
+  type: 'postgres'
+  port: 5432
+  username: 'postgres'
+  password: 'root'
+  synchronize: false
+
+jwt:
+  privateKey: apps/api/config/es512-private.pem
+  publicKey: apps/api/config/es512-public.pem
+  expiresIn: 900
+  refreshExpiresIn: 604800
+  cookieExpiresIn: 604800
+
+app:
+  fallbackLanguage: 'en'
+  name: 'CMuSy'
+  appUrl: 'http://localhost:3333'
+  webappUrl: 'http://localhost:4200'
+  sameSite: true
+
+queue:
+  driver: 'redis'
+  host: 'localhost'
+  port: 6379
+  db: ''
+  password: ''
+  username: ''
