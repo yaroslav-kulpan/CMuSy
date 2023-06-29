@@ -2,7 +2,7 @@
 export default {
   displayName: 'cmusy-ui-plugin',
   preset: '../../jest.preset.js',
-  testEnvironment: 'node',
+  testEnvironment: 'nodejs',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },

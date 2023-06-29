@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { isNil } from 'lodash';
 import {TypeOrmModuleOptions} from "@nestjs/typeorm";
-
 @Injectable()
 export class AppConfigService {
   constructor(private configService: ConfigService) {}

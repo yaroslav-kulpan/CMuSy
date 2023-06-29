@@ -13,8 +13,8 @@ db:
   synchronize: false
 
 jwt:
-  privateKey: apps/api/src/config/ecdsa-p521-private.pem
-  publicKey: apps/api/config/ecdsa-p521-public.pem
+  privateKey: apps/api/config/es512-private.pem
+  publicKey: apps/api/config/es512-public.pem
   expiresIn: 900
   refreshExpiresIn: 604800
   cookieExpiresIn: 604800

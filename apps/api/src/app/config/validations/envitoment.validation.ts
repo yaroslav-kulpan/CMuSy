@@ -1,14 +1,14 @@
-import { validateSync } from 'class-validator';
-import { plainToInstance } from 'class-transformer';
-import { EnvironmentVariables } from '../dto/environments.dto';
+import {validateSync} from 'class-validator';
+import {ClassConstructor, plainToInstance} from 'class-transformer';
 
-export function validateEnv(config: Record<string, unknown>) {
-  const validatedConfig = plainToInstance(EnvironmentVariables, config, {
+export function validate(config: Record<string, unknown>, cls: ClassConstructor<any>) {
+  const validatedConfig = plainToInstance(cls, config, {
     enableImplicitConversion: true,
   });
-  const errors = validateSync(validatedConfig, {
-    skipMissingProperties: false,
-  });
+
+    const errors = validateSync(validatedConfig, {
+      skipMissingProperties: false,
+    });
 
   if (errors.length > 0) {
     throw new Error(errors.toString());

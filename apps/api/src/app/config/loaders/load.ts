@@ -1,38 +1,39 @@
-import { readFileSync } from 'fs';
 import * as yaml from 'js-yaml';
 import deepmerge from 'deepmerge';
-import { join } from 'path';
 import * as dotenv from 'dotenv';
-import { validateEnv } from '../validations/envitoment.validation';
 
-const BASE_PATH = process.cwd();
+import nodejs from "../../shared/utils/nodejs";
+import {validate} from '../validations/envitoment.validation';
+import {EnvironmentVariables} from "../dto/environments.dto";
+
+const BASE_PATH = nodejs.process.cwd();
 const DIRECTORY_CONFIG_PATH = 'apps/api/config';
 const YML_CONFIG_DEFAULT_FILENAME = 'default.yml';
 const YML_CONFIG_FILENAME = 'development.yml';
 const ENV_LOCAL = '.env.local';
 
-const defaultConfigPathname = join(
+const defaultConfigPathname = nodejs.path.join(
   BASE_PATH,
   DIRECTORY_CONFIG_PATH,
   YML_CONFIG_DEFAULT_FILENAME
 );
-const configPathname = join(
+const configPathname = nodejs.path.join(
   BASE_PATH,
   DIRECTORY_CONFIG_PATH,
   YML_CONFIG_FILENAME
 );
 
-const defaultConfig = yaml.load(readFileSync(defaultConfigPathname, 'utf8'));
-const config = yaml.load(readFileSync(configPathname, 'utf8'));
+const defaultConfig = yaml.load(nodejs.fs.readFileSync(defaultConfigPathname, 'utf8'));
+const config = yaml.load(nodejs.fs.readFileSync(configPathname, 'utf8'));
 
 const env = dotenv.config({
-  path: join(BASE_PATH, DIRECTORY_CONFIG_PATH, ENV_LOCAL),
+  path: nodejs.path.join(BASE_PATH, DIRECTORY_CONFIG_PATH, ENV_LOCAL),
 });
 
 export default () => {
   return {
-    ...(deepmerge(defaultConfig, config) || {}),
-    ...(validateEnv(env.parsed) || {}),
+    ...(deepmerge(defaultConfig, config)),
     NODE_ENV: process.env.NODE_ENV,
+    ...(validate(env.parsed, EnvironmentVariables) || {}),
   } as Record<string, any>;
 };
