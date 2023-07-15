@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@cmusy/icons": ["libs/cmusy-icons/src/index.ts"],
+      "@cmusy/mailer": ["libs/cmusy-mailer/src/index.ts"],
       "@cmusy/plugin": ["libs/cmusy-ui-plugin/src/index.ts"],
       "@cmusy/ui": ["libs/cmusy-ui/src/index.ts"]
     }
